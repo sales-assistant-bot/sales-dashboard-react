@@ -12,7 +12,7 @@ import MainComponent from './components/MainComponent';
 const routes = (
 <Router history={browserHistory}>
   <Route path="/" component={App}>
-    <IndexRoute component={TableChart}/>
+    <IndexRoute component={MainComponent}/>
   </Route>
 </Router>
 )
