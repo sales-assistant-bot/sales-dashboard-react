@@ -1,6 +1,7 @@
 import React from 'react';
 
-class AdvancedMetrics extends React.Component {
+class TopClients extends React.Component {
+
 
 render() {
   return (
@@ -12,4 +13,4 @@ render() {
 
 }
 
-export default AdvancedMetrics;
+export default TopClients;

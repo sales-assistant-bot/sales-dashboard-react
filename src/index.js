@@ -10,6 +10,7 @@ const routes = (
 <Router history={browserHistory}>
   <Route path="/" component={App}>
     <IndexRoute component={MainComponent}/>
+    <Route path="/MainComponent" component={MainComponent}/>
   </Route>
 </Router>
 )
