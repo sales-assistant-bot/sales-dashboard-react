@@ -22,3 +22,54 @@ body {
   color:white;
   font-family: helvetica sans-serif;;
 }
+
+.main-component{
+  background-color: black;
+  display:flex;
+  width: 100vw;
+  height: 100vh;
+  margin:0;
+  flex-wrap: wrap;
+
+}
+.tile{
+  background-color: red;
+  height: 25%;
+  width : 15em;
+margin: .25em;
+flex-grow: 1;
+
+
+
+}
+.sales{
+}
+
+.expenses{
+
+}
+.profits{
+
+}
+.margin{
+
+}
+.clients{
+
+}
+.sales-expense-profit{
+flex-grow: 2;
+height: 70%;
+
+}
+.sales-table{
+flex-grow: 2;
+height: 70%;
+
+}
+.top-clients{
+flex-grow: 1;
+height: 70%;
+
+
+}
