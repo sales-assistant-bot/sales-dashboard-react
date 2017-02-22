@@ -20,25 +20,21 @@ const routes = (
   <Route path="/" component={App}>
     <IndexRoute component={Navbar}/>
     <Route path="navbar" component={Navbar}>
-      <Route path="sales" component={Sales}>
-        <Route path="weekly" component={Weekly}/>
-        <Route path="monthly" component={Monthly}/>
-        <Route path="yearly" component={Yearly}/>
+      <Route path="sales">
+        <IndexRoute component={Sales}/>
+        <Route path=":timeperiod" component={Sales}/>
       </Route>
-      <Route path="clients" component={Clients}>
-        <Route path="weekly" component={Weekly}/>
-        <Route path="monthly" component={Monthly}/>
-        <Route path="yearly" component={Yearly}/>
+      <Route path="clients">
+        <IndexRoute component={Clients}/>
+        <Route path=":timeperiod" component={Sales}/>
       </Route>
-      <Route path="advancedMetrics" component={AdvancedMetrics}>
-        <Route path="weekly" component={Weekly}/>
-        <Route path="monthly" component={Monthly}/>
-        <Route path="yearly" component={Yearly}/>
+      <Route path="advancedMetrics">
+        <IndexRoute component={AdvancedMetrics}/>
+        <Route path=":timeperiod" component={AdvancedMetrics}/>
       </Route>
-      <Route path="overview" component={Overview}>
-        <Route path="weekly" component={Weekly}/>
-        <Route path="monthly" component={Monthly}/>
-        <Route path="yearly" component={Yearly}/>
+      <Route path="overview">
+        <IndexRoute component={Ovewview}/>
+        <Route path=":timeperiod" component={Ovewview}/>
       </Route>
       <Route path="leads" component={Leads}/>
     </Route>
