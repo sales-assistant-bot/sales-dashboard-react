@@ -16,8 +16,7 @@ class MainComponent extends React.Component {
       this.setState({
         totalSales:totalSales.Total_Sales
       })
-    }
-  )
+    })
   }
   fetchDataExpenses(){
     fetch(`${hostName}/reports?totalExpenses`)
@@ -39,10 +38,8 @@ class MainComponent extends React.Component {
       this.setState({
         profits:profits.Profit
       })
-    }
-  )
+    })
   }
-
   fetchDataProfitMargin(){
     fetch(`${hostName}/reports?grossProfitMargin`)
     .then(response => response.json())
@@ -73,8 +70,7 @@ class MainComponent extends React.Component {
       this.setState({
         x:x
       })
-    }
-  )
+    })
   }
   fetchData7(){
     fetch(`${hostName}/`)
@@ -83,8 +79,7 @@ class MainComponent extends React.Component {
       this.setState({
         x:x
       })
-    }
-  )
+    })
   }
   fetchData8(){
     fetch(`${hostName}/`)
@@ -130,7 +125,5 @@ render() {
     </div>
   )
 }
-
 }
-
 export default MainComponent;
