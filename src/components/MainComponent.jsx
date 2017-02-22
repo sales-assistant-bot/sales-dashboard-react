@@ -1,59 +1,102 @@
 import React from 'react';
-
+var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
 class MainComponent extends React.Component {
-var hostName = 'https://decode-bot-project-sql-ajdez.c9users.io'
-  fetchData1(){
-    fetch(`${hostName}/`)
-    .then(response => response.json())
-    then(x =>
-      this.state({
-
+  constructor(){
+    super()
+    this.state = {}
+  }
+  fetchDataSales(){
+    fetch(`${hostName}/sales`)
+    .then(response => console.log(response))
+      //response.json())
+    .then(
+      x => {
+      console.log(x)
+      this.setState({
+        x:x
       })
+    }
+  )
+  }
+  fetchDataExpenses(){
+    fetch(`${hostName}/expenses`)
+    .then(response => response.json())
+    .then(
+      x => {
+      this.setState({
+        x:x
+      })
+    }
     )
   }
-  fetchData2(){
-    fetch(`${hostName}/`)
+  fetchDataCompany(){
+    fetch(`${hostName}/Company`)
     .then(response => response.json())
-    then(x =>
-      this.state({
-
+    .then(x =>{
+      this.setState({
+        x:x
       })
-    )
-  }
-  fetchData3(){
-    fetch(`${hostName}/`)
-    .then(response => response.json())
-    then(x =>
-      this.state({
-
-      })
-    )
+    }
+  )
   }
   fetchData4(){
     fetch(`${hostName}/`)
     .then(response => response.json())
-    then(x =>
-      this.state({
-
+    .then(
+      x =>{
+      this.setState({
+        x:x
       })
-    )
+    }
+  )
   }
   fetchData5(){
     fetch(`${hostName}/`)
     .then(response => response.json())
-    then(x =>
-      this.state({
-
+    .then(
+      x => {
+      this.setState({
+        x:x
       })
+    }
     )
   }
-
-
-
+  fetchData6(){
+    fetch(`${hostName}/`)
+    .then(response => response.json())
+    .then(x =>{
+      this.setState({
+        x:x
+      })
+    }
+  )
+  }
+  fetchData7(){
+    fetch(`${hostName}/`)
+    .then(response => response.json())
+    .then(x =>{
+      this.setState({
+        x:x
+      })
+    }
+  )
+  }
+  fetchData8(){
+    fetch(`${hostName}/`)
+    .then(response => response.json())
+    .then(x =>{
+      this.setState({
+        x:x
+      })
+    })
+  }
+  componentDidMount(){
+    this.fetchDataSales()
+  }
 render() {
   return (
     <div className="main-component">
-      <div className="sales"></div>
+      <div className="sales">${this.state.x}</div>
       <div className="expenses"></div>
       <div className="profits"></div>
       <div className="margin"></div>
@@ -64,7 +107,5 @@ render() {
     </div>
   )
 }
-
 }
-
 export default MainComponent;
