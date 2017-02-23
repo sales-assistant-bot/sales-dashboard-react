@@ -1,5 +1,5 @@
-import React from 'react'
-import {Chart} from 'react-google-charts'
+import React from 'react';
+import {Chart} from 'react-google-charts';
 
 
 var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
@@ -13,14 +13,20 @@ class TopClients extends React.Component{
   fetchDataTopClients(){
     fetch(`${hostName}/reports?topClients`)
     .then(response => response.json())
-    .then(topClients =>{
+    .then(data =>{
+      var output = data.map(function(obj) {
+        return [obj.CompanyName, obj.TotalSales]
+      })
+      output.unshift(['CompanyName', 'TotalSales'])
+
       this.setState({
-        topClients: topClients
+        data: output
       })
     })
   }
+
   componentDidMount(){
-    fetchDataTopClients();
+    this.fetchDataTopClients();
   }
   render() {
     return (
@@ -28,7 +34,7 @@ class TopClients extends React.Component{
       <Chart
         chartTitle="DonutChart"
         chartType="PieChart"
-        data= {this.props.topClient}
+        data={this.state.data}
         options={{"title":"Top Clients"}}
         //graph_id="ScatterChart"
         width="100%"

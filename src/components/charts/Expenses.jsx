@@ -19,7 +19,7 @@ class Expenses extends React.Component {
     })
   }
   componentDidMount(){
-    fetchDataExpenses();
+    this.fetchDataExpenses();
   }
 
 render() {
