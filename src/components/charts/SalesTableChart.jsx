@@ -25,20 +25,26 @@ class SalesTableChart extends React.Component{
     this.fetchDataTableChart();
   }
   render() {
-    return (
-    <div className={"my-pretty-chart-container"}>
-      <Chart
-        //chartTitle="DonutChart"
-        chartType="Table"
-        columns={[{"type":"string", "label":"Company Name"},{"type":"number", "label":"Sales"},{"type":"string", "label":"Date"}]}
-        rows={this.state.data}
-        width="100%"
-        height="400px"
-        chartPackages={["table"]}
-        legend_toggle
-      />
-    </div>
-    )
+
+    if(!this.state.data){
+      return <div> LOADING.... </div>
+    }
+    else{
+      return (
+      <div className={"my-pretty-chart-container"}>
+        <Chart
+          //chartTitle="DonutChart"
+          chartType="Table"
+          columns={[{"type":"string", "label":"Company Name"},{"type":"number", "label":"Sales"},{"type":"string", "label":"Date"}]}
+          rows={this.state.data}
+          width="100%"
+          height="400px"
+          chartPackages={["table"]}
+          legend_toggle
+        />
+      </div>
+      )
+    }    
   }
 }
 

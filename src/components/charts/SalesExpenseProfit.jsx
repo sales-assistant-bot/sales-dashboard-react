@@ -1,7 +1,7 @@
 import React from 'react';
 import {Chart} from 'react-google-charts';
 
-var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users' +'.io';
+var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
 
 class SalesExpenseProfit extends React.Component {
   constructor() {
@@ -12,10 +12,14 @@ class SalesExpenseProfit extends React.Component {
     fetch(`${hostName}/reports?barChartQuery`)
     .then(response => response.json())
     .then(data => {
-      var output = data.map(function (obj) {
-        return [obj.Month, obj.Sales, obj.Costs, obj.Profits]
-      })
-      output.unshift(["Month", "Sales", "Expenses", "Profits"])
+      var output = (
+        [["Month", "Sales", "Expenses", "Profits"]]
+        .concat(
+          data.map(function (obj) {
+            return [obj.Month, obj.Sales, obj.Costs, obj.Profits]
+          })
+        )
+      )
       this.setState({data: output})
     })
   }
@@ -41,17 +45,23 @@ class SalesExpenseProfit extends React.Component {
       }
     }
 
-    return (
-      <div className={"my-pretty-chart-container"}>
-        <Chart
-          chartType="ComboChart"
-          data={this.state.data}
-          options={options}
-          width="100%"
-          height="400px"
-          legend_toggle/>
-      </div>
-    )
+    if(!this.state.data){
+      return <div> LOADING.... </div>
+    }
+    else{
+      return (
+        <div className={"my-pretty-chart-container"}>
+          <Chart
+            chartType="ComboChart"
+            data={this.state.data}
+            options={options}
+            width="100%"
+            height="400px"
+            legend_toggle/>
+        </div>
+      )
+    }
+
   }
 
 }
