@@ -74,12 +74,12 @@ class MainComponent extends React.Component {
       })
     })
   }
-  fetchData7(){
-    fetch(`${hostName}/`)
+  fetchDataTableChart(){
+    fetch(`${hostName}/reports?tableChart`)
     .then(response => response.json())
-    .then(x =>{
+    .then(data =>{
       this.setState({
-        x:x
+        data:data
       })
     })
   }
@@ -100,6 +100,7 @@ class MainComponent extends React.Component {
     this.fetchDataProfitMargin();
     this.fetchDataAvgDealSize();
     this.fetchDataTopClients();
+    this.fetchDataTableChart();
 
   }
 
@@ -107,7 +108,7 @@ render() {
     //Pie Chart legend. Figure out better place to leave this
    var pieChartLegend =[["Company", "Sales"]];
    var barChartLegend = [["Month", "Sales", "Expenses", "Profits"]];
-
+   var salesTableLegend =[];
 
   return (
     <div className="main-component">
@@ -127,7 +128,14 @@ render() {
         <h2>Average Deal Size {this.state.average}</h2>
       </div>
       <div className="sales-expense-profit"></div>
-      <div className="sales-table"></div>
+      <div className="sales-table">
+
+        {this.state.data ? this.state.data.map(function(sales){
+          var arraySales = [sales.Customers, sales.Sales, sales.Dates]
+          salesTableLegend.push(arraySales)
+            return <TableChart sales={salesTableLegend}/>
+        }) :null}
+      </div>
       <div className="top-clients">
         {this.state.topClients ? this.state.topClients.map(function(client){
           var arrayClient = [client.CompanyName, client.TotalSales]
