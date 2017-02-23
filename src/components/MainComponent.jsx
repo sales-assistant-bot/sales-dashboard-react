@@ -109,6 +109,17 @@ render() {
    var pieChartLegend =[["Company", "Sales"]];
    var barChartLegend = [["Month", "Sales", "Expenses", "Profits"]];
    var salesTableLegend =[];
+   {this.state.data ? this.state.data.map(function(sales){
+     var arraySales = [sales.Customers, sales.Sales, sales.Dates]
+     salesTableLegend.push(arraySales)
+     return salesTableLegend
+   }) :null}
+
+   {this.state.topClients ? this.state.topClients.map(function(client){
+     var arrayClient = [client.CompanyName, client.TotalSales]
+     pieChartLegend.push(arrayClient)
+       return pieChartLegend
+   }) :null}
 
   return (
     <div className="main-component">
@@ -129,19 +140,10 @@ render() {
       </div>
       <div className="sales-expense-profit"></div>
       <div className="sales-table">
-
-        {this.state.data ? this.state.data.map(function(sales){
-          var arraySales = [sales.Customers, sales.Sales, sales.Dates]
-          salesTableLegend.push(arraySales)
-            return <TableChart sales={salesTableLegend}/>
-        }) :null}
+        <TableChart sales={salesTableLegend}/>
       </div>
       <div className="top-clients">
-        {this.state.topClients ? this.state.topClients.map(function(client){
-          var arrayClient = [client.CompanyName, client.TotalSales]
-          pieChartLegend.push(arrayClient)
-            return <PieChart topClient={pieChartLegend}/>
-        }) :null}
+        <PieChart topClient={pieChartLegend}/>
       </div>
     </div>
               )
