@@ -1,75 +1,60 @@
 body, html {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: black;
+
+
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
 .main-header {
-  text-align: center;
-  background-color: rgba(23, 21, 20, 0.8);
-  padding: 0.5%;
-  margin-bottom: 0;
-  margin-top: 20px;
-  border-radius: 100px;
-  margin-left: 30%;
-  margin-right: 30%;
-}
-.main-header a{
-  text-decoration: none;
-  color:white;
-  font-family: helvetica sans-serif;;
+    text-align: center;
+    height: 10%
 }
 
-.main-component{
-  background-color: black;
-  display:flex;
-  width: 100vw;
-  height: 100vh;
-  margin:0;
-  flex-wrap: wrap;
-
+.main-header a {
+    text-decoration: none;
+    color: white;
+    font-family: helvetica sans-serif;
+    ;
 }
-.tile{
-  background-color: red;
-  height: 25%;
-  width : 15em;
-margin: .25em;
-flex-grow: 1;
 
+.row1 {
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid black;
+    overflow: hidden;
+    align-items: baseline;;
 
 
 }
-.sales{
+
+.row2 {
+  height: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 4px solid black;
+    overflow: auto;
 }
 
-.expenses{
+
+
+.main-component {
+    background-color: whites;
+    width: 100vw;
+    height: 100vh;
+}
+.firstrow{
+  width: 20%;
+  border: 4px solid black;
+  background-color: white;
+  height: 100%;
 
 }
-.profits{
-
-}
-.margin{
-
-}
-.clients{
-
-}
-.sales-expense-profit{
-flex-grow: 2;
-height: 70%;
-
-}
-.sales-table{
-flex-grow: 2;
-height: 70%;
-
-}
-.top-clients{
-flex-grow: 1;
-height: 70%;
-
-
+.secondrow{
+  width: 33%;
+  border: 4px solid black;
+  background-color: white
 }
