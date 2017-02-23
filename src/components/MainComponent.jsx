@@ -13,14 +13,14 @@ export default class extends React.Component {
   render() {
     return (
       <div className="main-component">
-        <Sales/>
-        <Margin/>
-        <Profits/>
-        <AverageDealSize/>
-        <Expenses/>
-        <SalesExpenseProfit/>
-        <SalesTableChart/>
-        <TopClients/>
+        {/* <Sales/>
+          <Margin/>
+          <Profits/>
+          <AverageDealSize/>
+          <Expenses/>
+          <SalesExpenseProfit/>
+          <SalesTableChart/>
+        <TopClients/> */}
       </div>
     )
   }

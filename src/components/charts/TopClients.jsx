@@ -20,7 +20,7 @@ class TopClients extends React.Component{
     })
   }
   componentDidMount(){
-    fetchDataTopClients();
+    this.fetchDataTopClients();
   }
   render() {
     return (

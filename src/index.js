@@ -1,19 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import PieChart from './components/PieChart';
-import BarChart from './components/BarChart';
-import TableChart from './components/TableChart';
+import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import MainComponent from './components/MainComponent';
+import App from './App';
+import './index.css';
+
+// Needed for onTouchTap
+injectTapEventPlugin();
 
 const routes = (
-<Router history={browserHistory}>
-  <Route path="/" component={App}>
-    <IndexRoute component={MainComponent}/>
-  </Route>
-</Router>
+  <Router history={browserHistory}>
+    <Route path="/" component={App}>
+      <IndexRoute component={MainComponent}/>
+    </Route>
+  </Router>
 )
-  ReactDOM.render(routes, document.getElementById('root'));
+ReactDOM.render(routes, document.getElementById('root'));

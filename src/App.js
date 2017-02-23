@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
+import React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import AppBar from 'material-ui/AppBar';
 
-class App extends React.Component {
-    render() {
-        return (
-            <div className="main-app">
-              <header className="main-header">
-                <h1><Link to="/">DashBoard Project</Link></h1>
-              </header>
-              <main className="main-content">
-
-                {this.props.children}
-              </main>
-            </div>
-        );
-    }
+const styles = {
+  title: {
+    cursor: 'pointer',
+  },
 };
 
-export default App;
+export default (props) => (
+  <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+    <AppBar
+      title={<span style={styles.title}>Dashboard</span>}
+      onTitleTouchTap={()=>props.router.push('/')}
+    />
+  </MuiThemeProvider>
+)

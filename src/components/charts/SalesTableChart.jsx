@@ -19,7 +19,7 @@ class SalesTableChart extends React.Component{
     })
   }
   componentDidMount(){
-    fetchDataTableChart();
+    this.fetchDataTableChart();
   }
   render() {
 

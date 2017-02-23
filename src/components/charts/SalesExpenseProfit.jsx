@@ -1,4 +1,5 @@
 import React from 'react';
+import Chart from 'react-google-charts'
 
 var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
 class SalesExpenseProfit extends React.Component {
@@ -16,7 +17,7 @@ class SalesExpenseProfit extends React.Component {
     })
   }
   componentDidMount(){
-    fetchDataTableChart();
+    this.fetchDataTableChart();
   }
 render() {
   return (
