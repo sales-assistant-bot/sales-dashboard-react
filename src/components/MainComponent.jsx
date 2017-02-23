@@ -1,7 +1,7 @@
 import React from 'react';
-import PieChart from './PieChart';
-import BarChart from './BarChart';
-import TableChart from './TableChart';
+import PieChart from './charts/PieChart';
+import BarChart from './charts/BarChart';
+import TableChart from './charts/TableChart';
 
 var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
 
