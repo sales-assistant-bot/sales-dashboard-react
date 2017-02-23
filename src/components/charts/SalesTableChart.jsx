@@ -13,27 +13,28 @@ class SalesTableChart extends React.Component{
     fetch(`${hostName}/reports?tableChart`)
     .then(response => response.json())
     .then(data =>{
+      var output = data.map(function(obj) {
+        return [obj.Customers, obj.Sales, obj.Dates]
+      })
       this.setState({
-        data:data
+        data:output
       })
     })
   }
   componentDidMount(){
-    fetchDataTableChart();
+    this.fetchDataTableChart();
   }
   render() {
-
     return (
-
     <div className={"my-pretty-chart-container"}>
       <Chart
         //chartTitle="DonutChart"
         chartType="Table"
-        columns = {[{"type":"string", "label":"Company Name"},{"type":"number", "label":"Sales"},{"type":"string", "label":"Date"}]}
-        rows= {this.props.sales}
+        columns={[{"type":"string", "label":"Company Name"},{"type":"number", "label":"Sales"},{"type":"string", "label":"Date"}]}
+        rows={this.state.data}
         width="100%"
         height="400px"
-        chartPackages = {["table"]}
+        chartPackages={["table"]}
         legend_toggle
       />
     </div>

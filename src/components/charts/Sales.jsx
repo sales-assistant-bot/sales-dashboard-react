@@ -18,7 +18,7 @@ class Sales extends React.Component {
       })
     }
     componentDidMount(){
-      fetchDataSales();
+      this.fetchDataSales();
     }
 render() {
   return (
