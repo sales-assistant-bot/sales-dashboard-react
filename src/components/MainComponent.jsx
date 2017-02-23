@@ -1,4 +1,7 @@
 import React from 'react';
+import PieChart from './PieChart';
+import BarChart from './BarChart';
+import TableChart from './TableChart';
 
 var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
 
@@ -56,19 +59,18 @@ class MainComponent extends React.Component {
     .then(response => response.json())
     .then(
       average => {
-        console.log(average)
       this.setState({
         average:average.Avg_Sale_Amount
       })
     }
     )
   }
-  fetchData6(){
-    fetch(`${hostName}/`)
+  fetchDataTopClients(){
+    fetch(`${hostName}/reports?topClients`)
     .then(response => response.json())
-    .then(x =>{
+    .then(topClients =>{
       this.setState({
-        x:x
+        topClients: topClients
       })
     })
   }
@@ -97,11 +99,16 @@ class MainComponent extends React.Component {
     this.fetchDataProfits();
     this.fetchDataProfitMargin();
     this.fetchDataAvgDealSize();
-
+    this.fetchDataTopClients();
 
   }
 
 render() {
+    //Pie Chart legend. Figure out better place to leave this
+   var pieChartLegend =[["Company", "Sales"]];
+   var barChartLegend = [["Month", "Sales", "Expenses", "Profits"]];
+
+
   return (
     <div className="main-component">
       <div className="sales">
@@ -121,9 +128,15 @@ render() {
       </div>
       <div className="sales-expense-profit"></div>
       <div className="sales-table"></div>
-      <div className="top-clients"></div>
+      <div className="top-clients">
+        {this.state.topClients ? this.state.topClients.map(function(client){
+          var arrayClient = [client.CompanyName, client.TotalSales]
+          pieChartLegend.push(arrayClient)
+            return <PieChart topClient={pieChartLegend}/>
+        }) :null}
+      </div>
     </div>
-  )
+              )
 }
 }
 export default MainComponent;
