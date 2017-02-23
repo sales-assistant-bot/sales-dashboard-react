@@ -1,4 +1,7 @@
 import React from 'react';
+import PieChart from './PieChart';
+import BarChart from './BarChart';
+import TableChart from './TableChart';
 
 var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
 
@@ -56,28 +59,27 @@ class MainComponent extends React.Component {
     .then(response => response.json())
     .then(
       average => {
-        console.log(average)
       this.setState({
         average:average.Avg_Sale_Amount
       })
     }
     )
   }
-  fetchData6(){
-    fetch(`${hostName}/`)
+  fetchDataTopClients(){
+    fetch(`${hostName}/reports?topClients`)
     .then(response => response.json())
-    .then(x =>{
+    .then(topClients =>{
       this.setState({
-        x:x
+        topClients: topClients
       })
     })
   }
-  fetchData7(){
-    fetch(`${hostName}/`)
+  fetchDataTableChart(){
+    fetch(`${hostName}/reports?tableChart`)
     .then(response => response.json())
-    .then(x =>{
+    .then(data =>{
       this.setState({
-        x:x
+        data:data
       })
     })
   }
@@ -97,11 +99,28 @@ class MainComponent extends React.Component {
     this.fetchDataProfits();
     this.fetchDataProfitMargin();
     this.fetchDataAvgDealSize();
-
+    this.fetchDataTopClients();
+    this.fetchDataTableChart();
 
   }
 
 render() {
+    //Pie Chart legend. Figure out better place to leave this
+   var pieChartLegend =[["Company", "Sales"]];
+   var barChartLegend = [["Month", "Sales", "Expenses", "Profits"]];
+   var salesTableLegend =[];
+   {this.state.data ? this.state.data.map(function(sales){
+     var arraySales = [sales.Customers, sales.Sales, sales.Dates]
+     salesTableLegend.push(arraySales)
+     return salesTableLegend
+   }) :null}
+
+   {this.state.topClients ? this.state.topClients.map(function(client){
+     var arrayClient = [client.CompanyName, client.TotalSales]
+     pieChartLegend.push(arrayClient)
+       return pieChartLegend
+   }) :null}
+
   return (
     <div className="main-component">
       <div className="sales">
@@ -120,10 +139,14 @@ render() {
         <h2>Average Deal Size {this.state.average}</h2>
       </div>
       <div className="sales-expense-profit"></div>
-      <div className="sales-table"></div>
-      <div className="top-clients"></div>
+      <div className="sales-table">
+        <TableChart sales={salesTableLegend}/>
+      </div>
+      <div className="top-clients">
+        <PieChart topClient={pieChartLegend}/>
+      </div>
     </div>
-  )
+              )
 }
 }
 export default MainComponent;

@@ -22,14 +22,19 @@ import {Chart} from 'react-google-charts'
 
 //Table CHART
 class TableChart extends React.Component{
+  static propTypes = {
+    sales: React.PropTypes.array
+  }
   render() {
+        {console.log(this.props.sales)}
     return (
+
     <div className={"my-pretty-chart-container"}>
       <Chart
         //chartTitle="DonutChart"
         chartType="Table"
-        columns = {[{"type":"string", "label":"Company Name"},{"type":"string", "label":"Sales"},{"type":"string", "label":"Date"}]}
-        rows= {[["DecodeMTL", "$10000", "2017/01/01"],["Oakley", "$5000", "2017/01/01"]]}
+        columns = {[{"type":"string", "label":"Company Name"},{"type":"number", "label":"Sales"},{"type":"string", "label":"Date"}]}
+        rows= {this.props.sales}
         width="100%"
         height="400px"
         chartPackages = {["table"]}
