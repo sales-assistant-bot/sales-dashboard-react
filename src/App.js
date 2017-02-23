@@ -6,15 +6,19 @@ import AppBar from 'material-ui/AppBar';
 
 const styles = {
   title: {
-    cursor: 'pointer',
-  },
-};
+    cursor: 'pointer'
+  }
+}
+
 
 export default (props) => (
   <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-    <AppBar
-      title={<span style={styles.title}>Dashboard</span>}
-      onTitleTouchTap={()=>props.router.push('/')}
-    />
+    <div>
+      <AppBar
+        title={<span style={styles.title}>Dashboard</span>}
+        onTitleTouchTap={()=>props.router.push('/')}
+      />
+      {props.children}
+    </div>
   </MuiThemeProvider>
 )

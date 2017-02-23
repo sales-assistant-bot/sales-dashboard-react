@@ -7,6 +7,7 @@ import MainComponent from './components/MainComponent';
 import App from './App';
 import './index.css';
 
+
 // Needed for onTouchTap
 injectTapEventPlugin();
 
