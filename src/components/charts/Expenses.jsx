@@ -25,7 +25,8 @@ class Expenses extends React.Component {
 render() {
   return (
     <div className="expenses">
-      <h2>Expenses ${this.state.expenses}</h2>
+      <p className="title">Expenses</p>
+      <p className="value">${this.state.expenses}</p>
     </div>
   )
 }

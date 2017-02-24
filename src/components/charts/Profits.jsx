@@ -20,7 +20,8 @@ export default class extends Component {
   render() {
     return (
       <div className="profits">
-        <h2>Profits</h2>
+        <p className="title">Profits</p>
+        <p className="value">${this.state.profits}</p>
       </div>
     );
   }

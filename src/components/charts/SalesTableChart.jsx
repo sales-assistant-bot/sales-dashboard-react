@@ -14,7 +14,7 @@ class SalesTableChart extends React.Component{
     .then(response => response.json())
     .then(data =>{
       var output = data.map(function(obj) {
-        return [obj.Customers, obj.Sales, obj.Dates]
+        return [obj.Customers, obj.Sales, obj.Dates.slice(0,10)]
       })
       this.setState({
         data:output
@@ -44,7 +44,7 @@ class SalesTableChart extends React.Component{
         />
       </div>
       )
-    }    
+    }
   }
 }
 

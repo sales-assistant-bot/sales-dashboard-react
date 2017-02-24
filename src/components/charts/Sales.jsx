@@ -23,7 +23,8 @@ class Sales extends React.Component {
 render() {
   return (
     <div className="sales">
-      <h2>Total Sales ${this.state.totalSales}</h2>
+      <p className="title">Sales</p>
+      <p className="value">${this.state.totalSales}</p>
     </div>
   )
 }

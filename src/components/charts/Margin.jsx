@@ -21,7 +21,8 @@ export default class extends Component {
   render() {
     return (
       <div className="margin">
-        <h2>Margin</h2>
+        <p className="title">Margin</p>
+        <p className="value">{this.state.grossProfitMargin}%</p>
       </div>
     );
   }

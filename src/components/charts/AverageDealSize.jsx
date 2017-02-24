@@ -24,7 +24,8 @@ export default class extends Component {
   render() {
     return (
       <div className="avgDealSize">
-        <h2>Average Deal Size</h2>
+        <p>Average Deal Size </p>
+        <p className="value">${this.state.average}</p>
       </div>
     );
   }
