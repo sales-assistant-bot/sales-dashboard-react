@@ -11,14 +11,17 @@ const styles = {
 }
 
 
-export default (props) => (
-  <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-    <div>
-      <AppBar
-        title={<span style={styles.title}>Dashboard</span>}
-        onTitleTouchTap={()=>props.router.push('/')}
-      />
-      {props.children}
-    </div>
-  </MuiThemeProvider>
-)
+export default (props) => {
+  console.log(props)
+  return (
+    <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+      <div>
+        <AppBar
+          title={<span style={styles.title}>Dashboard</span>}
+          onTitleTouchTap={()=>props.router.push('/')}
+        />
+        {props.children}
+      </div>
+    </MuiThemeProvider>
+  )
+}

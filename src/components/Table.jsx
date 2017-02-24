@@ -41,18 +41,17 @@ export default class extends React.Component {
                   </TableHeader>
                   <TableBody>
                     {this.state.data.map(function(data, i) {
-                      data.key = i   //getting a key warning. Where should this part go to remove it?
                       console.log(data)
                       return (
-                        <TableRow>
+                        <TableRow key={i}>
                           <TableRowColumn>{data.Customers}</TableRowColumn>
                           <TableRowColumn>{data.Sales}</TableRowColumn>
                           <TableRowColumn>{data.Dates.slice(0,10)}</TableRowColumn>
-                                </TableRow>
-                            )
-                        })}
+                        </TableRow>
+                      )
+                    })}
 
-                    </TableBody>
+                  </TableBody>
                 </Table>
             )
         }
