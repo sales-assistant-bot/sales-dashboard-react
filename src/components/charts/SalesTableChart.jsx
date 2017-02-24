@@ -35,7 +35,7 @@ class SalesTableChart extends React.Component{
         <Chart
           //chartTitle="DonutChart"
           chartType="Table"
-          columns={[{"type":"string", "label":"Company Name"},{"type":"number", "label":"Sales"},{"type":"string", "label":"Date"}]}
+          columns={[{"type":"string", "label":"Company"},{"type":"number", "label":"Sales"},{"type":"string", "label":"Date"}]}
           rows={this.state.data}
           width="100%"
           height="400px"
