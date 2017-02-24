@@ -24,7 +24,7 @@ export default class extends React.Component {
         </div>
         <div className="charts">
           <Paper className="sales"><SalesExpenseProfit/></Paper>
-          <Paper className="table"><TableExample/></Paper>
+          <Paper className="table"><TableExample /></Paper>
           <Paper className="client"><TopClients/></Paper>
         </div>
       </div>
