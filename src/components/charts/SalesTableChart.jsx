@@ -14,7 +14,7 @@ class SalesTableChart extends React.Component{
     .then(response => response.json())
     .then(data =>{
       var output = data.map(function(obj) {
-        return [obj.Customers, obj.Sales, obj.Dates]
+        return [obj.Customers, obj.Sales, obj.Dates.slice(0,10)]
       })
       this.setState({
         data:output
@@ -35,7 +35,7 @@ class SalesTableChart extends React.Component{
         <Chart
           //chartTitle="DonutChart"
           chartType="Table"
-          columns={[{"type":"string", "label":"Company Name"},{"type":"number", "label":"Sales"},{"type":"string", "label":"Date"}]}
+          columns={[{"type":"string", "label":"Company"},{"type":"number", "label":"Sales"},{"type":"string", "label":"Date"}]}
           rows={this.state.data}
           width="100%"
           height="400px"
@@ -44,7 +44,7 @@ class SalesTableChart extends React.Component{
         />
       </div>
       )
-    }    
+    }
   }
 }
 
