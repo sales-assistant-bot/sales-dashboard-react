@@ -1,4 +1,5 @@
 import React from 'react';
+import Loading from './Loading'
 
 var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
 class Expenses extends React.Component {
@@ -13,7 +14,7 @@ class Expenses extends React.Component {
     .then(
       expenses => {
       this.setState({
-        expenses:expenses.Total_Expenses
+        data:expenses.Total_Expenses
 
       })
     })
@@ -23,10 +24,17 @@ class Expenses extends React.Component {
   }
 
 render() {
+  if (!this.state.data) {
+    return (
+      <div className="loading-container">
+        <Loading />
+      </div>
+    )
+  }
   return (
     <div className="expenses">
       <p className="title">Expenses</p>
-      <p className="value">${this.state.expenses}</p>
+      <p className="value">${this.state.data}</p>
     </div>
   )
 }

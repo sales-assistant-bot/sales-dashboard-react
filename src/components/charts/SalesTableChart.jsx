@@ -1,5 +1,6 @@
 import React from 'react'
 import {Chart} from 'react-google-charts'
+import Loading from './Loading'
 
 
 var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
@@ -25,26 +26,30 @@ class SalesTableChart extends React.Component{
     this.fetchDataTableChart();
   }
   render() {
-
-    if(!this.state.data){
-      return <div> LOADING.... </div>
+    let options = {
+      animation: {
+        startup: true,
+        duration: 1000,
+        easing: 'out',
+      }
     }
-    else{
-      return (
+
+    return (
       <div className={"my-pretty-chart-container"}>
         <Chart
-          //chartTitle="DonutChart"
           chartType="Table"
           columns={[{"type":"string", "label":"Company"},{"type":"number", "label":"Sales"},{"type":"string", "label":"Date"}]}
           rows={this.state.data}
+          options={options}
           width="100%"
           height="400px"
           chartPackages={["table"]}
           legend_toggle
+          loader={<Loading />
+          }
         />
       </div>
-      )
-    }
+    )
   }
 }
 

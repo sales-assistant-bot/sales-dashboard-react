@@ -1,5 +1,6 @@
 import React from 'react';
 import {Chart} from 'react-google-charts';
+import Loading from './Loading'
 
 var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
 
@@ -24,19 +25,27 @@ class TopClients extends React.Component {
         this.fetchDataTopClients();
     }
     render() {
-        if (!this.state.data) {
-            return <div>
-                LOADING...</div>
-        } else {
-            return (
-                <div className="top-clients">
-                    <Chart chartTitle="DonutChart" chartType="PieChart" data={this.state.data} options={{
-                        "title": "Top Clients"
-                    }} //graph_id="ScatterChart"
-                        width="100%" height="400px" legend_toggle/>
-                </div>
-            )
+      let options = {
+        "title": "Top Clients",
+        animation: {
+          startup: true,
+          duration: 1000,
+          easing: 'out',
         }
+      }
+      return (
+        <div className="top-clients">
+          <Chart chartTitle="DonutChart"
+            chartType="PieChart"
+            data={this.state.data}
+            options={options}
+            width="100%"
+            height="400px"
+            legend_toggle
+            loader={<Loading />}
+          />
+        </div>
+      )
     }
 }
 

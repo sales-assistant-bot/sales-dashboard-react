@@ -1,5 +1,6 @@
 import React from 'react';
 import {Chart} from 'react-google-charts';
+import Loading from './Loading'
 
 var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
 
@@ -31,6 +32,11 @@ class SalesExpenseProfit extends React.Component {
   render() {
     const options = {
       "title": "MONTHLY(Sales-Expenses-Profits)",
+      animation: {
+        startup: true,
+        duration: 1000,
+        easing: 'out',
+      },
       "vAxis": {
         "title": "$"
       },
@@ -45,23 +51,20 @@ class SalesExpenseProfit extends React.Component {
       }
     }
 
-    if(!this.state.data){
-      return <div> LOADING.... </div>
-    }
-    else{
-      return (
-        <div className={"my-pretty-chart-container"}>
-          <Chart
-            chartType="ComboChart"
-            data={this.state.data}
-            options={options}
-            width="100%"
-            height="400px"
-            legend_toggle/>
-        </div>
-      )
-    }
+    return (
+      <div className={"my-pretty-chart-container"}>
+        <Chart
+          chartType="ComboChart"
+          data={this.state.data}
 
+          options={options}
+          width="100%"
+          height="400px"
+          legend_toggle
+          loader={<Loading />}
+        />
+      </div>
+    )
   }
 
 }
