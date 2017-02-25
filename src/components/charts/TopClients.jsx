@@ -1,5 +1,5 @@
-import React from 'react';
-import {Chart} from 'react-google-charts';
+import React from 'react'
+import {Chart} from 'react-google-charts'
 import Loading from './Loading'
 
 var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';

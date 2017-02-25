@@ -24,7 +24,6 @@ class SalesExpenseProfit extends React.Component {
       this.setState({data: output})
     })
   }
-
   componentDidMount() {
     this.fetchDataSalesExpenseProfit();
   }
@@ -56,7 +55,6 @@ class SalesExpenseProfit extends React.Component {
         <Chart
           chartType="ComboChart"
           data={this.state.data}
-
           options={options}
           width="100%"
           height="400px"
