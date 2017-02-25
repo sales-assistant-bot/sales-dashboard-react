@@ -27,7 +27,7 @@ export default class extends React.Component {
           <Paper className="sales"><SalesExpenseProfit/></Paper>
           <Paper className="table"><TableExample /></Paper>
           <Paper className="client"><TopClients/></Paper>
-          {/* <Paper className="goal"><GoalGauge/></Paper> */}
+          <Paper className="goal"><GoalGauge/></Paper>
         </div>
       </div>
     )

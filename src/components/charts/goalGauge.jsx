@@ -1,6 +1,6 @@
 import React from 'react';
-import Loading from './Loading';
 import {Chart} from 'react-google-charts';
+import Loading from './Loading';
 
 var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
 
@@ -11,14 +11,15 @@ class GoalGauge extends React.Component{
     this.state = {}
   }
   fetchDataGoalGauge(){
-    fetch(`${hostName}/goals?goalGauge`)
+    fetch(`${hostName}/reports?goalGauge`)
     .then(response=> response.json())
     .then(data=>{
       var output = (
-        [["Time Frame", "Sales Goal", "Actual Sales"]]
+        [["Goal Id", "Sales Goal", "Actual Sales"]]
         .concat(
           data.map(function(obj){
-            return[obj.EndDate, obj.GoalAmount, obj.CurrentAmount]
+            console.log("IIIIIIIIIIIII", obj.GoalAmount)
+            return[obj.id, obj.GoalAmount, obj.CurrentAmount]
           })
         )
       )
@@ -28,7 +29,7 @@ class GoalGauge extends React.Component{
   componentDidMount(){
     this.fetchDataGoalGauge();
   }
-  return(){
+  render(){
     const options = {
       "title" : "Sales Goals + Sales Results",
       animation: {
@@ -37,15 +38,15 @@ class GoalGauge extends React.Component{
         easing: 'out'
       },
       "vAxis":{
-        "title":"Sales($)"
+        "title":"$"
       },
       "hAxis":{
         "title": "Goals"
       },
       "seriesType": "bars",
       "series": {
-        "2":{
-          "type" : "line"
+        "2": {
+          "type": "line"
         }
       }
     }
