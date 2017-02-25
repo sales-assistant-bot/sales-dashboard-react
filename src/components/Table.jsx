@@ -27,7 +27,7 @@ export default class extends React.Component {
     render() {
         if (!this.state.data) {
             return <div>
-                LOADING....
+              LOADING....
             </div>
         } else {
             return (
@@ -41,7 +41,6 @@ export default class extends React.Component {
                   </TableHeader>
                   <TableBody>
                     {this.state.data.map(function(data, i) {
-                      console.log(data)
                       return (
                         <TableRow key={i}>
                           <TableRowColumn>{data.Customers}</TableRowColumn>
