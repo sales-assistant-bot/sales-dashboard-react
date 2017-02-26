@@ -43,8 +43,11 @@ class GoalGauge extends React.Component{
       "hAxis":{
         "title": "Goals"
       },
-      "seriesType": "bars",
+      // "seriesType": "bars",
       "series": {
+        "1:": {
+          "type" : "line"
+        },
         "2": {
           "type": "line"
         }

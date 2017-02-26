@@ -8,7 +8,7 @@ import SalesTableChart from './charts/SalesTableChart';
 import Sales from './charts/Sales';
 import Expenses from './charts/Expenses';
 import TableExample from "./Table";
-import GoalGauge from "./charts/GoalGauge";
+import GoalGauge from "./charts/goalGauge";
 import {Paper} from 'material-ui';
 
 export default class extends React.Component {
