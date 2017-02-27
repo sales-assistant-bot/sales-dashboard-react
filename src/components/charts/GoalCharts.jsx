@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import { Paper } from 'material-ui';
 import moment from 'moment'
 
@@ -25,6 +25,11 @@ export default class extends Component {
   }
 
   render() {
+    const options = {
+      legend: {
+        display: false
+      }
+    }
     return (
       <div>
         {
@@ -36,20 +41,21 @@ export default class extends Component {
           :
           this.state.data.map(goal => (
             <Paper className="tile-sm goal" key={goal.id}>
-              <h2 className="title">
-                {"Goal: "}
-                <span>
-                  {
-                    moment(goal.StartDate).format('MMM Do') +
-                    " - " +
-                    moment(goal.EndDate).format('MMM Do') + " "
-                  }
-                </span>
-                {" : "}
-                {moment(goal.EndDate).fromNow(true)}
-                {" remaining."}
-              </h2>
-              <Pie data={this.shapeData(goal)} />
+              <div>
+                <div className="chart-title">
+                  <span className="goal-date-range">
+                    {
+                      moment(goal.StartDate).format('MMM Do') +
+                      " - " +
+                      moment(goal.EndDate).format('MMM Do') + " "
+                    }
+                  </span>
+                  {" : "}
+                  {moment(goal.EndDate).fromNow(true)}
+                  {" remaining."}
+                </div>
+                <Doughnut data={this.shapeData(goal)} options={options} height={130}/>
+              </div>
             </Paper>
           ))
         }

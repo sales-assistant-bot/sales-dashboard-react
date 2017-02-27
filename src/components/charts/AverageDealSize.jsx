@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Loading from './Loading'
+import {API_HOST} from '../../env'
 
-var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
 
 export default class extends Component {
 
@@ -12,12 +12,12 @@ export default class extends Component {
   }
 
   fetchDataAvgDealSize(){
-    fetch(`${hostName}/reports?avgDealSize`)
+    fetch(`${API_HOST}/reports?avgDealSize`)
     .then(response => response.json())
     .then(
       average => {
       this.setState({
-        data:average.Avg_Sale_Amount
+        data: average.Avg_Sale_Amount
       })
     })
   }

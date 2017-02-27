@@ -4,10 +4,9 @@ import Profits from './charts/Profits';
 import AverageDealSize from './charts/AverageDealSize';
 import TopClients from './charts/TopClients';
 import SalesExpenseProfit from './charts/SalesExpenseProfit';
-import SalesTableChart from './charts/SalesTableChart';
 import Sales from './charts/Sales';
 import Expenses from './charts/Expenses';
-import TableExample from "./Table";
+import SalesTable from "./charts/SalesTable";
 import GoalGauge from "./charts/goalGauge";
 import GoalsTable from "./charts/GoalsTable";
 import GoalCharts from "./charts/GoalCharts";
@@ -24,10 +23,13 @@ export default class extends React.Component {
         <Paper className="tile-xs"><Profits/></Paper>
         <Paper className="tile-xs"><AverageDealSize/></Paper>
         <Paper className="tile-xs"><Expenses/></Paper>
-        <Paper className="tile-md sales"><SalesExpenseProfit/></Paper>
-        <Paper className="tile table"><TableExample /></Paper>
-        <Paper className="tile client"><TopClients/></Paper>
+        <Paper className="tile-sm sales"><SalesExpenseProfit/></Paper>
+        <Paper className="tile-sm client"><TopClients/></Paper>
+
+        <Paper className="tile-sm-long"><SalesTable /></Paper>
+
         <GoalCharts />
+
         <Paper className="tile goalTable"><GoalsTable/></Paper>
       </div>
     )

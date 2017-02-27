@@ -64,21 +64,35 @@ export default class extends Component {
   }
 
   render() {
+    if (!this.state.data) {
+      return (
+        <div className="loading-container">
+          <Loading />
+        </div>
+      )
+    }
     return (
       <div>
-        {!this.state.data ? <Loading /> :
-          <Bar
-            data={this.state.data}
-            height={320}
-            options={{
-              layout: {
+        <div className="chart-title">
+          <span style={{color: "rgba(39, 128, 164, 1)"}}> Sales </span>
+          <span style={{color: 'rgba(227, 11, 93, 1)'}}> Costs </span>
+          <span style={{color: 'rgba(149, 173, 51, 1)'}}> Profits </span>
+        </div>
+        <Bar
+          data={this.state.data}
+          height={200}
+          width={400}
+          options={{
+            layout: {
                 padding: 10
-              },
-              responsive: true,
-              maintainAspectRatio: false
-            }}
-          />
-        }
+            },
+            legend: {
+              display: false
+            },
+            // responsive: true,
+            maintainAspectRatio: true
+          }}
+        />
       </div>
     )
   }
