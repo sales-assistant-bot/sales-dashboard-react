@@ -3,7 +3,7 @@ import Loading from './Loading'
 import { API_HOST } from '../../env'
 
 export default class extends Component {
-  
+
   state ={}
 
   componentDidMount() {
@@ -11,7 +11,7 @@ export default class extends Component {
   }
 
   fetchDataExpenses() {
-    fetch(`${hostName}/reports?totalExpenses`)
+    fetch(`${API_HOST}/reports?totalExpenses`)
     .then(response => response.json())
     .then(expenses => {
       this.setState({data: expenses.Total_Expenses})
