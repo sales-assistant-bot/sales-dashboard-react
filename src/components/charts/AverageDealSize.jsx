@@ -31,8 +31,8 @@ export default class extends Component {
       )
     }
     return (
-      <div className="avgDealSize">
-        <p>Average Deal Size </p>
+      <div className="number-report">
+        <h2 className="title">Average Deal Size </h2>
         <p className="value">${this.state.data}</p>
       </div>
     );

@@ -32,8 +32,8 @@ render() {
     )
   }
   return (
-    <div className="expenses">
-      <p className="title">Expenses</p>
+    <div className="number-report">
+      <h2 className="title">Expenses</h2>
       <p className="value">${this.state.data}</p>
     </div>
   )

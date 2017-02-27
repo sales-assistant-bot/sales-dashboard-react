@@ -10,29 +10,25 @@ import Expenses from './charts/Expenses';
 import TableExample from "./Table";
 import GoalGauge from "./charts/goalGauge";
 import GoalsTable from "./charts/GoalsTable";
-import {Paper} from 'material-ui';
+import GoalCharts from "./charts/GoalCharts";
+import { Paper } from 'material-ui';
 
 export default class extends React.Component {
 
   render() {
     return (
       <div className="main-component">
-        <div className="number-reports">
-          <Paper><Sales/></Paper>
-          <Paper><Margin/></Paper>
-          <Paper><Profits/></Paper>
-          <Paper><AverageDealSize/></Paper>
-          <Paper><Expenses/></Paper>
-        </div>
-        <div className="charts">
-          <Paper className="sales"><SalesExpenseProfit/></Paper>
-          <Paper className="table"><TableExample /></Paper>
-          <Paper className="client"><TopClients/></Paper>
-        </div>
-        <div className="goals">
-          <Paper className="goal"><GoalGauge/></Paper>
-          <Paper className="goalTable"><GoalsTable/></Paper>
-        </div>
+
+        <Paper className="tile-xs"><Sales/></Paper>
+        <Paper className="tile-xs"><Margin/></Paper>
+        <Paper className="tile-xs"><Profits/></Paper>
+        <Paper className="tile-xs"><AverageDealSize/></Paper>
+        <Paper className="tile-xs"><Expenses/></Paper>
+        <Paper className="tile-md sales"><SalesExpenseProfit/></Paper>
+        <Paper className="tile table"><TableExample /></Paper>
+        <Paper className="tile client"><TopClients/></Paper>
+        <GoalCharts />
+        <Paper className="tile goalTable"><GoalsTable/></Paper>
       </div>
     )
   }

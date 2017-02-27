@@ -3,58 +3,67 @@ body, html {
     background-color: white;
     margin: 0;
     padding: 0;
+    font-size: 10px;
 }
 
 .main-header {
-    text-align: center;
-    height: 10%
+  text-align: center;
+  height: 10%
 }
 
 .main-header a {
-    text-decoration: none;
-    color: white;
-    font-family: helvetica sans-serif;
+  text-decoration: none;
+  color: white;
+  font-family: helvetica sans-serif;
 }
 
-.number-reports {
+
+.main-component {
   display: flex;
+  flex-flow: row wrap;
 }
 
-.number-reports > * {
-  flex: 1;
-  margin: 20px 10px;
-  padding: 10px;
+.number-report .title {
+  font-size: 2.4rem;
+  color: #9EC1A3;
+  margin: 0;
   text-align: center;
+  font-weight: 200;
 }
 
-.number-reports p {
-  margin-top: 0;
-  margin-bottom: 0;
+.number-report .value {
+  font-size: 2rem;
+  color: #40798C;
+  margin: 0;
+  text-align: center;
+  font-weight: 600;
 }
 
-.number-reports .title {
-  font-size: 1.2em;
-  font-weight: 500;
+.tile-xs {
+  width: 25rem;
+  height: 10rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.number-reports .value {
-  font-size: 2.5em;
+.tile-sm {
+  width: 50rem;
+  height: 20rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.charts{
-width: inherit;
-display: flex;
-
+.tile-md {
+  margin: 1rem;
+  width: 52rem;
+  height: 32rem;
 }
 
-.charts > * {
-  flex: 1;
-  margin: 20px 10px;
-  padding: 10px;
-
-
-}
-
-.sales{
-flex: 1
+.tile {
+  margin: 1rem;
+  max-width: 40rem;
 }

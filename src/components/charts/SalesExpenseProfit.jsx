@@ -1,65 +1,86 @@
-import React from 'react';
-import {Chart} from 'react-google-charts';
+import React, { Component } from 'react';
+import { Bar } from 'react-chartjs-2';
 import Loading from './Loading'
+import {API_HOST} from '../../env'
 
-var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
 
-class SalesExpenseProfit extends React.Component {
-  constructor() {
-    super()
-    this.state = {}
+export default class extends Component {
+  state = {
+    data: {
+      labels: [],
+      datasets: [
+        {
+          label: 'Sales',
+          backgroundColor: 'rgba(39, 128, 164, 0.2)',
+          borderColor: 'rgba(39, 128, 164, 1)',
+          borderWidth: 1,
+          hoverBackgroundColor: 'rgba(39, 128, 164, 0.4)',
+          hoverBorderColor: 'rgba(39, 128, 164, 1)',
+          data: []
+        },
+        {
+          label: 'Cost',
+          backgroundColor: 'rgba(227, 11, 93, 0.2)',
+          borderColor: 'rgba(227, 11, 93, 1)',
+          borderWidth: 1,
+          hoverBackgroundColor: 'rgba(227, 11, 93, 0.4)',
+          hoverBorderColor: 'rgba(227, 11, 93, 1)',
+          data: []
+        },
+        {
+          label: 'Profits',
+          backgroundColor: 'rgba(149, 173, 51, 0.2)',
+          borderColor: 'rgba(149, 173, 51, 1)',
+          borderWidth: 1,
+          hoverBackgroundColor: 'rgba(149, 173, 51, 0.4)',
+          hoverBorderColor: 'rgba(149, 173, 51, 1)',
+          data: []
+        }
+      ]
+    }
   }
-  fetchDataSalesExpenseProfit() {
-    fetch(`${hostName}/reports?barChartQuery`)
-    .then(response => response.json())
-    .then(data => {
-      var output = (
-        [["Month", "Sales", "Expenses", "Profits"]]
-        .concat(
-          data.map(function (obj) {
-            return [obj.Month, obj.Sales, obj.Costs, obj.Profits]
-          })
-        )
-      )
-      this.setState({data: output})
-    })
-  }
+
   componentDidMount() {
     this.fetchDataSalesExpenseProfit();
   }
 
-  render() {
-    const options = {
-      "title": "MONTHLY(Sales-Expenses-Profits)",
-      animation: {
-        startup: true,
-        duration: 1000,
-        easing: 'out',
-      },
-      "vAxis": {
-        "title": "$"
-      },
-      "hAxis": {
-        "title": "Month"
-      },
-      "seriesType": "bars"
-    }
+  fetchDataSalesExpenseProfit() {
+    fetch(`${API_HOST}/reports?barChartQuery`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      let dataStructure = this.state.data;
+      data.forEach(d => {
+        if(d.Sales || d.Costs || d.Profits) {
+          dataStructure.labels.push(d.Month)
+          dataStructure.datasets[0].data.push(d.Sales)
+          dataStructure.datasets[1].data.push(d.Costs)
+          dataStructure.datasets[2].data.push(d.Profits)
+        }
+      })
 
+      this.setState({data: dataStructure})
+    })
+  }
+
+  render() {
     return (
-      <div className={"my-pretty-chart-container"}>
-        <Chart
-          chartType="ComboChart"
-          data={this.state.data}
-          options={options}
-          width="100%"
-          height="400px"
-          legend_toggle
-          loader={<Loading />}
-        />
+      <div>
+        {!this.state.data ? <Loading /> :
+          <Bar
+            data={this.state.data}
+            height={320}
+            options={{
+              layout: {
+                padding: 10
+              },
+              responsive: true,
+              maintainAspectRatio: false
+            }}
+          />
+        }
       </div>
     )
   }
 
 }
-
-export default SalesExpenseProfit;

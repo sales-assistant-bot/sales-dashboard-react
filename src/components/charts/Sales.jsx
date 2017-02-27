@@ -32,8 +32,8 @@ class Sales extends React.Component {
       )
     }
     return (
-      <div className="sales">
-        <p className="title">Sales</p>
+      <div className="number-report">
+        <h2 className="title">Sales</h2>
         <p className="value">${this.state.data}</p>
       </div>
     )
