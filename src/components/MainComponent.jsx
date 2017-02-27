@@ -9,6 +9,7 @@ import Sales from './charts/Sales';
 import Expenses from './charts/Expenses';
 import TableExample from "./Table";
 import GoalGauge from "./charts/goalGauge";
+import GoalsTable from "./charts/GoalsTable";
 import {Paper} from 'material-ui';
 
 export default class extends React.Component {
@@ -27,7 +28,10 @@ export default class extends React.Component {
           <Paper className="sales"><SalesExpenseProfit/></Paper>
           <Paper className="table"><TableExample /></Paper>
           <Paper className="client"><TopClients/></Paper>
+        </div>
+        <div className="goals">
           <Paper className="goal"><GoalGauge/></Paper>
+          <Paper className="goalTable"><GoalsTable/></Paper>
         </div>
       </div>
     )

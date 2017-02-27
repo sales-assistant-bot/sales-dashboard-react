@@ -18,7 +18,7 @@ class GoalGauge extends React.Component{
         [["Goal Id", "Sales Goal", "Actual Sales"]]
         .concat(
           data.map(function(obj){
-            console.log("IIIIIIIIIIIII", obj.GoalAmount)
+            console.log("IIIIIIIIIIIII", obj)
             return[obj.id, obj.GoalAmount, obj.CurrentAmount]
           })
         )
@@ -43,11 +43,11 @@ class GoalGauge extends React.Component{
       "hAxis":{
         "title": "Goals"
       },
-      // "seriesType": "bars",
+      "seriesType": "bars",
       "series": {
-        "1:": {
-          "type" : "line"
-        },
+        // "1": {
+        //   "type" : "line"
+        // },
         "2": {
           "type": "line"
         }

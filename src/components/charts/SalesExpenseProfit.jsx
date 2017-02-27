@@ -42,12 +42,7 @@ class SalesExpenseProfit extends React.Component {
       "hAxis": {
         "title": "Month"
       },
-      "seriesType": "bars",
-      "series": {
-        "3": {
-          "type": "line"
-        }
-      }
+      "seriesType": "bars"
     }
 
     return (
