@@ -1,6 +1,8 @@
 import React from 'react';
 import {Chart} from 'react-google-charts';
 import Loading from './Loading';
+import {Doughnut} from 'react-chartjs-2'
+
 
 var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
 
@@ -18,7 +20,6 @@ class GoalGauge extends React.Component{
         [["Goal Id", "Sales Goal", "Actual Sales"]]
         .concat(
           data.map(function(obj){
-            console.log("IIIIIIIIIIIII", obj)
             return[obj.id, obj.GoalAmount, obj.CurrentAmount]
           })
         )
