@@ -21,6 +21,7 @@ body, html {
 .main-component {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 .number-report .title {
@@ -66,7 +67,6 @@ body, html {
 
 .tile-sm-long {
   width: 52rem;
-
   margin: 1rem;
   display: flex;
   justify-content: center;
@@ -77,11 +77,6 @@ body, html {
   margin: 1rem;
   width: 77rem;
   height: 32rem;
-}
-
-.tile {
-  margin: 1rem;
-  max-width: 40rem;
 }
 
 .goal-date-range {
