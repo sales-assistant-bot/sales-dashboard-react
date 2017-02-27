@@ -82,3 +82,7 @@ body, html {
 .goal-date-range {
   color: #9EC1A3;
 }
+
+/*table th, table td {
+  height: 20px !important;
+}*/

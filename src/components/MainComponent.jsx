@@ -7,10 +7,28 @@ import SalesExpenseProfit from './charts/SalesExpenseProfit';
 import Sales from './charts/Sales';
 import Expenses from './charts/Expenses';
 import SalesTable from "./charts/SalesTable";
-import GoalCharts from "./charts/GoalCharts";
+import GoalChart from "./charts/GoalChart";
 import { Paper } from 'material-ui';
+import {API_HOST} from '../env'
+import Loading from './charts/Loading'
+
+
 
 export default class extends React.Component {
+
+  state = {}
+
+  componentDidMount() {
+    this.fetchDataGoalGauge();
+  }
+
+  fetchDataGoalGauge() {
+    fetch(`${API_HOST}/reports?goalGauge`)
+    .then(response => response.json())
+    .then(data => {
+      this.setState({goalsData: data})
+    })
+  }
 
   render() {
     return (
@@ -24,10 +42,12 @@ export default class extends React.Component {
         <Paper className="tile-sm"><SalesExpenseProfit/></Paper>
         <Paper className="tile-sm"><TopClients/></Paper>
 
-        <GoalCharts />
+        {!this.state.goalsData ? <Paper className="tile-sm"><Loading/></Paper> :
+          this.state.goalsData.map((goal, i) => (
+          <Paper className="tile-sm" key={i}><GoalChart data={goal}/></Paper>
+        ))}
 
-        <Paper className="tile-sm-long"><SalesTable /></Paper>
-        
+        <Paper className="tile-sm"><SalesTable /></Paper>
 
       </div>
     )
