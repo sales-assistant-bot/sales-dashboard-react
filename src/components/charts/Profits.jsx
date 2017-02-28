@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import Loading from './Loading'
 import { Paper } from 'material-ui';
+import * as api from '../../api'
 
-
-var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
 
 export default class extends Component {
 
@@ -14,7 +13,8 @@ export default class extends Component {
   }
 
   fetchDataProfits() {
-    fetch(`${hostName}/reports?profits`).then(response => response.json())
+    api.getProfits()
+    .then(response => response.json())
     .then(profits => {
       this.setState({data: profits.Profit})
     })

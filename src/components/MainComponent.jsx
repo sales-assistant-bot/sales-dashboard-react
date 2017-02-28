@@ -1,4 +1,6 @@
 import React from 'react';
+import { Paper } from 'material-ui';
+
 import Margin from './charts/Margin';
 import Profits from './charts/Profits';
 import AverageDealSize from './charts/AverageDealSize';
@@ -8,10 +10,8 @@ import Sales from './charts/Sales';
 import Expenses from './charts/Expenses';
 import SalesTable from "./charts/SalesTable";
 import GoalChart from "./charts/GoalChart";
-import {API_HOST} from '../env'
 import Loading from './charts/Loading'
-import { Paper } from 'material-ui';
-
+import * as api from '../api'
 
 
 export default class extends React.Component {
@@ -23,7 +23,7 @@ export default class extends React.Component {
   }
 
   fetchDataGoalGauge() {
-    fetch(`${API_HOST}/reports?goalGauge`)
+    api.getGoals()
     .then(response => response.json())
     .then(data => {
       this.setState({goalsData: data})
@@ -40,20 +40,16 @@ export default class extends React.Component {
           <div className="tile-xs"><AverageDealSize/></div>
           <div className="tile-xs"><Expenses/></div>
           <div className="tile-xs"><Profits/></div>
-
         </div>
-
         <div className="tile-lg"><SalesExpenseProfit/></div>
         <div className="tile-sm"><TopClients/></div>
         <div className="tile-sm"><TopClients/></div>
-        <div className="tile-sm"><SalesTable /></div>
+        <div className="tile-sm"><SalesTable/></div>
 
-        {!this.state.goalsData ? <Paper className="tile-sm"><Loading/></Paper> :
+        {!this.state.goalsData ? <Loading/> :
           this.state.goalsData.map((goal, i) => (
             <div className="tile-sm" key={i}><GoalChart data={goal}/></div>
           ))}
-
-
       </div>
     )
   }

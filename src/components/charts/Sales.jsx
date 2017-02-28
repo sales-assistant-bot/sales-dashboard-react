@@ -1,19 +1,17 @@
 import React from 'react';
 import Loading from './Loading'
 import { Paper } from 'material-ui';
+import * as api from '../../api'
 
 
-var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
-
-
-class Sales extends React.Component {
+export default class extends React.Component {
     constructor(){
       super()
       this.state = {}
     }
 
     fetchDataSales(){
-      fetch(`${hostName}/reports?totalRev`)
+      api.getTotalRevenue()
       .then(response => response.json())
       .then(
         totalSales => {
@@ -42,5 +40,3 @@ class Sales extends React.Component {
   }
 
 }
-
-export default Sales;

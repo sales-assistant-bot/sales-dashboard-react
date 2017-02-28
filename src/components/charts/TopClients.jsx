@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
-// import {Chart} from 'react-google-charts'
 import Loading from './Loading'
 import {Pie} from 'react-chartjs-2';
-import {API_HOST} from '../../env'
 import { Paper } from 'material-ui';
-
+import * as api from '../../api'
 
 
 export default class extends Component {
@@ -16,7 +14,9 @@ export default class extends Component {
   }
 
   fetchDataTopClients() {
-    fetch(`${API_HOST}/reports?topClients`).then(response => response.json()).then(data => {
+    api.getTopClients()
+    .then(response => response.json())
+    .then(data => {
       var output = {
         labels: data.map(obj => obj.CompanyName),
         datasets: [

@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import Loading from './Loading'
 import { Paper } from 'material-ui';
+import * as api from '../../api'
 
-
-var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users' +
-    '.io';
 
 export default class extends Component {
 
@@ -15,7 +13,7 @@ export default class extends Component {
   }
 
   fetchDataProfitMargin() {
-    fetch(`${hostName}/reports?grossProfitMargin`)
+    api.getMargin()
     .then(response => response.json())
     .then(margin => {
       this.setState({data: margin.Gross_Profit_Margin_Percent})

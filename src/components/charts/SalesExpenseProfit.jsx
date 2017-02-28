@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 import Loading from './Loading'
-import {API_HOST} from '../../env'
 import { Paper } from 'material-ui';
-
+import * as api from '../../api'
 
 
 export default class extends Component {
@@ -47,10 +46,9 @@ export default class extends Component {
   }
 
   fetchDataSalesExpenseProfit() {
-    fetch(`${API_HOST}/reports?barChartQuery`)
+    api.getSalesCostsProfits()
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       let dataStructure = this.state.data;
       data.forEach(d => {
         if(d.Sales || d.Costs || d.Profits) {

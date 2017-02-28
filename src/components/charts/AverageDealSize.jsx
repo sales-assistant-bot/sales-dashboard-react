@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import Loading from './Loading'
-import {API_HOST} from '../../env'
-import { Paper } from 'material-ui';
+import React, {Component} from 'react'
+import { Paper } from 'material-ui'
 
+import Loading from './Loading'
+import * as api from '../../api'
 
 
 export default class extends Component {
@@ -14,7 +14,7 @@ export default class extends Component {
   }
 
   fetchDataAvgDealSize(){
-    fetch(`${API_HOST}/reports?avgDealSize`)
+    api.getAverageDeal()
     .then(response => response.json())
     .then(
       average => {

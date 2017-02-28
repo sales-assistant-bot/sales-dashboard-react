@@ -12,7 +12,6 @@ const styles = {
 
 
 export default (props) => {
-  console.log(props)
   return (
     <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
       <div>

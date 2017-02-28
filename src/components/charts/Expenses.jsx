@@ -2,18 +2,18 @@ import React, {Component} from 'react'
 import Loading from './Loading'
 import { API_HOST } from '../../env'
 import { Paper } from 'material-ui';
+import * as api from '../../api'
 
 
 export default class extends Component {
-
-  state ={}
+  state = {}
 
   componentDidMount() {
     this.fetchDataExpenses();
   }
 
   fetchDataExpenses() {
-    fetch(`${API_HOST}/reports?totalExpenses`)
+    api.getExpenses()
     .then(response => response.json())
     .then(expenses => {
       this.setState({data: expenses.Total_Expenses})
