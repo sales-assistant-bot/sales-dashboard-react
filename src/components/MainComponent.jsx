@@ -8,9 +8,9 @@ import Sales from './charts/Sales';
 import Expenses from './charts/Expenses';
 import SalesTable from "./charts/SalesTable";
 import GoalChart from "./charts/GoalChart";
-import { Paper } from 'material-ui';
 import {API_HOST} from '../env'
 import Loading from './charts/Loading'
+import { Paper } from 'material-ui';
 
 
 
@@ -33,21 +33,26 @@ export default class extends React.Component {
   render() {
     return (
       <div className="main-component">
+        <div className="tile-lg">
+          <div className="tile-xs"><Sales/></div>
+          <div className="tile-xs"><Margin/></div>
+          <div className="tile-xs"><Profits/></div>
+          <div className="tile-xs"><AverageDealSize/></div>
+          <div className="tile-xs"><Expenses/></div>
+          <div className="tile-xs"><Profits/></div>
 
-        <Paper className="tile-xs"><Sales/></Paper>
-        <Paper className="tile-xs"><Margin/></Paper>
-        <Paper className="tile-xs"><Profits/></Paper>
-        <Paper className="tile-xs"><AverageDealSize/></Paper>
-        <Paper className="tile-xs"><Expenses/></Paper>
-        <Paper className="tile-sm"><SalesExpenseProfit/></Paper>
-        <Paper className="tile-sm"><TopClients/></Paper>
+        </div>
+
+        <div className="tile-lg"><SalesExpenseProfit/></div>
+        <div className="tile-sm"><TopClients/></div>
+        <div className="tile-sm"><TopClients/></div>
+        <div className="tile-sm"><SalesTable /></div>
 
         {!this.state.goalsData ? <Paper className="tile-sm"><Loading/></Paper> :
           this.state.goalsData.map((goal, i) => (
-          <Paper className="tile-sm" key={i}><GoalChart data={goal}/></Paper>
-        ))}
+            <div className="tile-sm" key={i}><GoalChart data={goal}/></div>
+          ))}
 
-        <Paper className="tile-sm"><SalesTable /></Paper>
 
       </div>
     )

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 import Loading from './Loading'
 import {API_HOST} from '../../env'
+import { Paper } from 'material-ui';
+
 
 
 export default class extends Component {
@@ -72,7 +74,7 @@ export default class extends Component {
       )
     }
     return (
-      <div>
+      <Paper>
         <div className="chart-title">
           <span style={{color: "rgba(39, 128, 164, 1)"}}> Sales </span>
           <span style={{color: 'rgba(227, 11, 93, 1)'}}> Costs </span>
@@ -93,7 +95,7 @@ export default class extends Component {
             maintainAspectRatio: true
           }}
         />
-      </div>
+      </Paper>
     )
   }
 
