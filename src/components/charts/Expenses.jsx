@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import Loading from './Loading'
 import { API_HOST } from '../../env'
+import { Paper } from 'material-ui';
+
 
 export default class extends Component {
 
@@ -27,10 +29,10 @@ export default class extends Component {
       )
     }
     return (
-      <div className="number-report">
+      <Paper className="number-report">
         <h2 className="title">Expenses</h2>
         <p className="value">${this.state.data}</p>
-      </div>
+      </Paper>
     )
   }
 

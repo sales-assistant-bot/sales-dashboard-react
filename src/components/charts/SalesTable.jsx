@@ -5,7 +5,8 @@ import {
   TableHeader,
   TableHeaderColumn,
   TableRow,
-  TableRowColumn
+  TableRowColumn,
+  Paper
 } from 'material-ui/Table';
 import moment from 'moment'
 
@@ -42,7 +43,7 @@ export default class extends React.Component {
     const style = {height: "22px"}
 
     return (
-      <div>
+      <Paper>
         <div className="chart-title">Most Recent Sales</div>
 
         <Table>
@@ -66,7 +67,7 @@ export default class extends React.Component {
 
           </TableBody>
         </Table>
-      </div>
+      </Paper>
     )
   }
 

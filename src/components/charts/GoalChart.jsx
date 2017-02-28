@@ -13,10 +13,12 @@ export default class extends Component {
     const options = {
       legend: {
         display: false
-      }
+      },
+      maintainAspectRatio: true,
+      responsive: true
     }
     return (
-      <div>
+      <Paper>
         <div className="chart-title">
           <span className="goal-date-range">
             {
@@ -29,8 +31,8 @@ export default class extends Component {
           {moment(this.props.data.EndDate).fromNow(true)}
           {" remaining."}
         </div>
-        <Doughnut data={this.shapeData(this.props.data)} options={options} height={130}/>
-      </div>
+        <Doughnut data={this.shapeData(this.props.data)} options={options} height={100}/>
+      </Paper>
     )
   }
 

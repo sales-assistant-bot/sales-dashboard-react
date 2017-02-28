@@ -3,6 +3,8 @@ import React, {Component} from 'react'
 import Loading from './Loading'
 import {Pie} from 'react-chartjs-2';
 import {API_HOST} from '../../env'
+import { Paper } from 'material-ui';
+
 
 
 export default class extends Component {
@@ -53,11 +55,15 @@ export default class extends Component {
         </div>
       )
     }
+    const options = {
+      maintainAspectRatio: true,
+      responsive: true
+    }
     return (
-      <div>
+      <Paper>
         <div className="chart-title">Top Clients</div>
-        <Pie height={230} data={this.state.data}/>
-      </div>
+        <Pie data={this.state.data} options={options}/>
+      </Paper>
     )
   }
 }

@@ -5,8 +5,10 @@ import {
     TableHeader,
     TableHeaderColumn,
     TableRow,
-    TableRowColumn
+    TableRowColumn,
+    Paper
 } from 'material-ui/Table';
+
 
 var hostName = 'https://cors-anywhere.herokuapp.com/https://decode-bot-project-sql-ajdez.c9users.io';
 
