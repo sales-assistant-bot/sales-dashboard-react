@@ -12,6 +12,7 @@ import SalesTable from "./charts/SalesTable";
 import GoalChart from "./charts/GoalChart";
 import Loading from './charts/Loading'
 import * as api from '../api'
+import GoalsAchieved from "./charts/GoalsAchieved";
 
 
 export default class extends React.Component {
@@ -39,7 +40,7 @@ export default class extends React.Component {
           <div className="tile-xs"><Profits/></div>
           <div className="tile-xs"><AverageDealSize/></div>
           <div className="tile-xs"><Expenses/></div>
-          <div className="tile-xs"><Profits/></div>
+          <div className="tile-xs"><GoalsAchieved/></div>
         </div>
         <div className="tile-lg"><SalesExpenseProfit/></div>
         <div className="tile-sm"><TopClients/></div>

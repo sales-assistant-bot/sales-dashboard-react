@@ -92,12 +92,24 @@ body, html {
 
 @media (max-width: 764px) {
   .tile-xs {
-    width: 100%;
+    width: 50%;
+    padding-bottom: 3%;
+  }
+  .tile-xs > div {
+padding-bottom: 5%;
   }
   .tile-sm{
     width: 100%;
+    padding-bottom: 3%;
+  }
+  .tile-sm > div {
+padding-bottom: 5%;
   }
   .tile-lg{
     width: 100%;
+    padding-bottom: 3%;
+  }
+  .tile-lg > div {
+padding-bottom: 5%;
   }
 }

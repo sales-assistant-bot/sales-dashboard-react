@@ -14,8 +14,9 @@ export default class extends Component {
   fetchDataGoalsAchieved() {
     api.getGoalsAcheived()
     .then(response => response.json())
+
     .then(goals => {
-      this.setState({data: goals.goalsCompleted})
+      this.setState({data: goals[0].goalsCompleted})
     })
   }
 
@@ -29,7 +30,7 @@ export default class extends Component {
     }
     return (
       <Paper className="number-report">
-        <h2 className="title"># Of Goals Achieved</h2>
+        <h2 className="title">Goals Achieved</h2>
         <p className="value">{this.state.data}</p>
       </Paper>
     )
