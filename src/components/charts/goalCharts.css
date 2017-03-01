@@ -1,7 +1,26 @@
-.goal .title {
-  color: lightgrey;
+.goal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.goal .title span {
-  color: grey;
+.goal span {
+  text-align: center;
+}
+
+.goal-date-range {
+  font-size: 1.8rem;
+  color: #40798c;
+}
+
+.goal-amount {
+  color: #40798c;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.goal-time-remaining {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #40798c;
 }
