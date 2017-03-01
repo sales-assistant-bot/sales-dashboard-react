@@ -89,7 +89,7 @@ export default class extends Component {
             legend: {
               display: false
             },
-            // responsive: true,
+            responsive: true,
             maintainAspectRatio: true
           }}
         />
