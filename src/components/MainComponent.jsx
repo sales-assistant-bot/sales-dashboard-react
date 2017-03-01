@@ -42,7 +42,7 @@ export default class extends React.Component {
           <div className="tile-xs"><Expenses/></div>
           <div className="tile-xs"><GoalsAchieved/></div>
         </div>
-        <div className="tile-lg SalesExpenseProfit"><SalesExpenseProfit/></div>
+        <div className="tile-lg"><SalesExpenseProfit/></div>
         <div className="tile-sm"><TopClients/></div>
         <div className="tile-sm"><TopClients/></div>
         <div className="tile-sm"><SalesTable/></div>

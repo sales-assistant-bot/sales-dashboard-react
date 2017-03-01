@@ -12,8 +12,10 @@ $ npm install .
 ```
 
 ## Usage
+```
+$npm start
+```
 
-The project is entirely open source and you can host your own Sales-Dashboard-react instance on your own server.
 
 ## Contributing
 
@@ -29,7 +31,7 @@ TODO: Write history
 
 ## Credits
 
-Anthony Desromeau
+Anthony Desormeau
 Randy klose
 Joe Melanson
 

@@ -9,145 +9,145 @@ body, html {
 }
 
 .main-header {
-  text-align: center;
-  height: 10%
+    text-align: center;
+    height: 10%
 }
 
 .main-header a {
-  text-decoration: none;
-  color: white;
-  font-family: helvetica sans-serif;
+    text-decoration: none;
+    color: white;
+    font-family: helvetica sans-serif;
 }
 
 .main-component {
-  padding-top: 1rem;
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-around;
-  max-width: 1500px;
-  margin: auto;
+    padding-top: 1rem;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    max-width: 1500px;
+    margin: auto;
 }
 
 .number-report .title {
-  font-size: 2.4rem;
-  color: #439A86;
-  margin: 0;
-  text-align: center;
-  font-weight: 200;
+    font-size: 2.4rem;
+    color: #439A86;
+    margin: 0;
+    text-align: center;
+    font-weight: 200;
 }
 
 .number-report .value {
-  font-size: 2rem;
-  color: #007991;
-  margin: 0;
-  text-align: center;
-  font-weight: 600;
+    font-size: 2rem;
+    color: #007991;
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
 }
 
 .chart-title {
-  color: #ADADAD;
-  font-size: 2.4rem;
-  margin: 1rem;
-  text-align: center;
-  font-weight: 200;
+    color: #439A86;
+    font-size: 2.4rem;
+    margin: 1rem;
+    text-align: center;
+    font-weight: 200;
 }
 
 .tile-lg {
-  width: 50%;
-  display:flex;
-  justify-content: space-between;
-  margin: 0;
-  flex-flow: column wrap;
-  max-height: 460px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    flex-flow: column wrap;
+    max-height: 350px;
 }
 
 .tripleChart {
-  height: 100%;
-  margin: 0 1rem;
+    height: 100%;
+    margin: 0 1rem;
 }
-
-
 
 .tile-sm {
-  margin: 0;
-  padding: 0;
-  width: 33.33333%;
-  min-height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 33.33333%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.tile-sm > div {
-  margin: 1rem;
-  height: 90%;
-  width: 100%;
+
+.tile-sm>div {
+    margin: 1rem;
+    height: 90%;
+    width: 100%;
 }
 
 .tile-xs {
-  width: 50%;
-  height: 33.333%;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 50%;
+    height: 33.333%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .number-report {
-  margin: 0 1rem;
-  padding: 1rem;
-  width: 100%;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-}
-.tile-lg .tile-xs:nth-child(1) {
-  align-items: flex-start;
-}
-.tile-lg .tile-xs:nth-child(4) {
-  align-items: flex-start;
-}
-.tile-lg .tile-xs:nth-child(3) {
-  align-items: flex-end;
-}
-.tile-lg .tile-xs:nth-child(6) {
-  align-items: flex-end;
+    margin: 0 1rem;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
 
+.tile-lg .tile-xs:nth-child(1) {
+    align-items: flex-start;
+}
+
+.tile-lg .tile-xs:nth-child(4) {
+    align-items: flex-start;
+}
+
+.tile-lg .tile-xs:nth-child(3) {
+    align-items: flex-end;
+}
+
+.tile-lg .tile-xs:nth-child(6) {
+    align-items: flex-end;
+}
 
 tbody tr, tbody tr td {
-  height: 34px !important;
+    height: 34px !important;
 }
 
-
 @media (max-width: 764px) {
-  .body{
-    width: 100vw
-  }
-  .main-component {
-    width: 100%
-  }
-
-
-  .tile-xs {
-    width: 50%;
-    padding-bottom: 3%;
-  }
-  .tile-xs > div {
-padding-bottom: 5%;
-  }
-  .tile-sm{
-    width: 100vw;
-    padding-bottom: 3%;
-  }
-  .tile-sm > div {
-padding-bottom: 5%;
-  }
-  .tile-lg{
-    width: 100%;
-    padding-bottom: 3%;
-  }
-  .tile-lg > div {
-padding-bottom: 5%;
-  }
+    .body {
+        width: 100vw
+    }
+    .main-component {
+        width: 100%
+    }
+    .tile-xs {
+        width: 50%;
+        padding-bottom: 3%;
+    }
+    .tile-xs>div {
+        padding-bottom: 5%;
+    }
+    .tile-sm {
+        width: 100vw;
+        padding-bottom: 3%;
+    }
+    .tile-sm>div {
+        padding-bottom: 5%;
+    }
+    .tile-lg {
+        max-height:450px;
+        width: 100%;
+        padding-bottom: 3%;
+    }
+    .tile-lg>div {
+        padding-bottom: 5%;
+    }
 }
