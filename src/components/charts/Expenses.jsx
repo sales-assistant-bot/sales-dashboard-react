@@ -30,7 +30,7 @@ export default class extends Component {
     }
     return (
       <Paper className="number-report">
-        <h2 className="title">Expenses</h2>
+        <h2 className="chart-title">Expenses</h2>
         <p className="value">${this.state.data}</p>
       </Paper>
     )
