@@ -1,44 +1,56 @@
 .goal {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+
+.goal-text {
+  margin-top: 2rem !important;
+  font-size: 1.7rem;
+  color: #007991;
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.goal-text-congrats {
+  font-size: 1.7rem;
+  font-weight: 500;
 }
 
 .goal span {
   text-align: center;
 }
 
-.goal-time {
+.goal-time-remaining {
+  font-size: 2rem;
+  color: #007991;
+  margin: 0;
   text-align: center;
-  font-size: 1.4rem;
-  color: #40798c;
+  font-weight: 600;
 }
 
+.goal-time-range {
+  color: #ADADAD;
+  font-size: 1.5rem;
+  margin: 1rem;
+  text-align: center;
+  font-weight: 200;
+}
 
 .goal .bg-success {
-  background-color: #439a86 !important;
+  text-align: center;
+  background-color: rgba(67, 154, 134, 0.5) !important;
 }
 
 .goal .bg-info {
-  background-color: #418faf !important;
+  background-color: rgba(0, 121, 180, 0.5) !important;
 }
 
 .goal .bg-warning {
-  background-color: #7a8196 !important;
+  background-color: rgba(100, 46, 80, 0.5) !important;
 }
 
 .goal .progress-bar {
   height: 24px;
-}
-
-.goal {
-  position: relative;
-}
-
-.progress-bars {
-  position: absolute;
-  top: 5rem;
-  height: 60px;
-  left:0;
-  width: 100%;
 }

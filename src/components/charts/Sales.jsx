@@ -33,7 +33,7 @@ export default class extends React.Component {
     }
     return (
       <Paper className="number-report">
-        <h2 className="title">Sales</h2>
+        <h2 className="chart-title">Sales</h2>
         <p className="value">${this.state.data}</p>
       </Paper>
     )

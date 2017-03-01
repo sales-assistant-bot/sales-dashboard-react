@@ -55,10 +55,15 @@ body, html {
 .tile-lg {
   width: 50%;
   display:flex;
-  /*justify-content: center;*/
+  justify-content: space-between;
   margin: 0;
-  flex-flow: wrap;
-  position: static;;
+  flex-flow: column wrap;
+  max-height: 400px;
+}
+
+.tripleChart {
+  height: 100%;
+  margin: 0 1rem;
 }
 
 
@@ -66,7 +71,7 @@ body, html {
   margin: 0;
   padding: 0;
   width: 33.33333%;
-  min-height: 300px;
+  min-height: 280px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,18 +84,35 @@ body, html {
 
 .tile-xs {
   width: 50%;
-  height: 30%;
+  height: 33.333%;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.tile-xs > div {
-  margin: 1rem;
+
+.number-report {
+  margin: 0 1rem;
   padding: 1rem;
   width: 100%;
-  height: 80%
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
+.tile-lg .tile-xs:nth-child(1) {
+  align-items: flex-start;
+}
+.tile-lg .tile-xs:nth-child(4) {
+  align-items: flex-start;
+}
+.tile-lg .tile-xs:nth-child(3) {
+  align-items: flex-end;
+}
+.tile-lg .tile-xs:nth-child(6) {
+  align-items: flex-end;
+}
+
 
 tbody tr, tbody tr td {
   height: 34px !important;

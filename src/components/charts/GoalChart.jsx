@@ -24,30 +24,27 @@ export default class extends Component {
         <div className="goal-amount chart-title">
           {` Goal: $${data.GoalAmount.toMoney()}`}
         </div>
-        <div className="goal-time">
-          <span >
-            {
-              moment(data.StartDate).format('MMM D') +
-                  " - " +
-              moment(data.EndDate).format('MMM D') + " "
-            }
-          </span>
-          <span>
-            {moment(data.EndDate).fromNow(true)}
-            {" remaining."}
-          </span>
+        <div className="goal-time-range">
+          {
+            moment(data.StartDate).format('MMM D') +
+                " - " +
+            moment(data.EndDate).format('MMM D') + " "
+          }
         </div>
-        {overValue
-          ? <span>{`Congratulations, $${data.GoalAmount} reached!`}</span>
-          : <span>{`You've managed $${Math.round(data.CurrentAmount).toMoney()} so far.`}</span>
-        }
+        <div className="goal-time-remaining">
+          {moment(data.EndDate).fromNow(true)}
+          {" remaining."}
+        </div>
+
         <div className="progress-bars">
           <Progress animated bar color={overValue? "success" : "warning"} value={mainValue}>
+            {overValue ? <span className="goal-text-congrats">{`Congratulations, goal reached!`}</span> : null}
           </Progress>
           {overValue? <Progress animated bar color="info" value={overValue}/> : null}
         </div>
-        {overValue? <span>{`You've gone $${Math.round(Number(data.CurrentAmount-data.GoalAmount)).toMoney()} past your goal!` }</span> : null}
+        {overValue? <span className="goal-text">{`You've gone $${Math.round(Number(data.CurrentAmount-data.GoalAmount)).toMoney()} past your goal!` }</span> : null}
 
+        {!overValue? <span className="goal-text">{`You've managed $${Math.round(data.CurrentAmount).toMoney()} so far.`}</span> : null}
 
       </Paper>
     )

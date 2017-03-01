@@ -12,20 +12,20 @@ export default class extends Component {
       datasets: [
         {
           label: 'Sales',
-          backgroundColor: 'rgba(0, 121, 145, 0.2)',
-          borderColor: 'rgba(39, 128, 164, 1)',
+          backgroundColor: 'rgba(0, 121, 180, 0.2)',
+          borderColor: 'rgba(0, 121, 180, 1)',
           borderWidth: 1,
-          hoverBackgroundColor: 'rgba(0, 121, 145, 0.4)',
-          hoverBorderColor: 'rgba(0, 121, 145, 1)',
+          hoverBackgroundColor: 'rgba(0, 121, 180, 0.4)',
+          hoverBorderColor: 'rgba(0, 121, 180, 1)',
           data: []
         },
         {
           label: 'Cost',
-          backgroundColor: 'rgba(34, 46, 80, 0.2)',
-          borderColor: 'rgba(34, 46, 80, 1)',
+          backgroundColor: 'rgba(100, 46, 80, 0.2)',
+          borderColor: 'rgba(100, 46, 80, 1)',
           borderWidth: 1,
-          hoverBackgroundColor: 'rgba(34, 46, 80, 0.4)',
-          hoverBorderColor: 'rgba(34, 46, 80, 1)',
+          hoverBackgroundColor: 'rgba(100, 46, 80, 0.4)',
+          hoverBorderColor: 'rgba(100, 46, 80, 1)',
           data: []
         },
         {
@@ -71,27 +71,28 @@ export default class extends Component {
         </div>
       )
     }
+    const options = {
+      layout: {
+          padding: 10
+      },
+      legend: {
+        display: false
+      },
+      responsive: true,
+      maintainAspectRatio: false
+    }
     return (
-      <Paper>
+      <Paper className="tripleChart">
         <div className="chart-title">
-          <span style={{color: "rgba(39, 128, 164, 0.6)"}}> Sales </span>
-          <span style={{color: 'rgba(34, 46, 80, 0.6)'}}> Costs </span>
+          <span style={{color: "rgba(0, 121, 180, 0.6)"}}> Sales </span>
+          <span style={{color: 'rgba(100, 46, 80, 0.6)'}}> Costs </span>
           <span style={{color: 'rgba(67, 154, 134, 0.6)'}}> Profits </span>
         </div>
         <Bar
           data={this.state.data}
-          height={200}
-          width={400}
-          options={{
-            layout: {
-                padding: 10
-            },
-            legend: {
-              display: false
-            },
-            responsive: true,
-            maintainAspectRatio: true
-          }}
+          // height={200}
+          // width={400}
+          options={options}
         />
       </Paper>
     )

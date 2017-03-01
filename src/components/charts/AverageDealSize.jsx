@@ -34,7 +34,7 @@ export default class extends Component {
     }
     return (
       <Paper className="number-report">
-        <h2 className="title">Average Deal Size </h2>
+        <h2 className="chart-title">Average Deal Size </h2>
         <p className="value">${this.state.data}</p>
       </Paper>
     );
