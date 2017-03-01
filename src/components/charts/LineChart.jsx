@@ -25,7 +25,6 @@ export default class extends Component {
           }
         ]
       }
-      console.log("IIIIIIIII", output)
       this.setState({data: output})
     })
   }
