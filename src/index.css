@@ -86,10 +86,6 @@ body, html {
   width: 100%;
 }
 
-.goal-date-range {
-  color: #9EC1A3;
-}
-
 @media (max-width: 764px) {
   .tile-xs {
     width: 50%;
