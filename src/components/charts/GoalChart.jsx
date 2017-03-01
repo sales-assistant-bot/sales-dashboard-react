@@ -24,13 +24,13 @@ export default class extends Component {
         <div className="goal-amount chart-title">
           {` Goal: $${data.GoalAmount.toMoney()}`}
         </div>
-        <div className="goal-time-range">
+        {/* <div className="goal-time-range">
           {
             moment(data.StartDate).format('MMM D') +
                 " - " +
             moment(data.EndDate).format('MMM D') + " "
           }
-        </div>
+        </div> */}
         <div className="goal-time-remaining">
           {moment(data.EndDate).fromNow(true)}
           {" remaining."}
@@ -44,7 +44,7 @@ export default class extends Component {
         </div>
         {overValue? <span className="goal-text">{`You've gone $${Math.round(Number(data.CurrentAmount-data.GoalAmount)).toMoney()} past your goal!` }</span> : null}
 
-        {!overValue? <span className="goal-text">{`You've managed $${Math.round(data.CurrentAmount).toMoney()} so far.`}</span> : null}
+        {!overValue? <span className="goal-text">{`You've sold $${Math.round(data.CurrentAmount).toMoney()} so far.`}</span> : null}
 
       </Paper>
     )

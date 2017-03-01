@@ -72,7 +72,7 @@ body, html {
   margin: 0;
   padding: 0;
   width: 33.33333%;
-  min-height: 280px;
+  min-height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;

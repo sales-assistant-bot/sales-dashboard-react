@@ -21,11 +21,11 @@ export default class extends Component {
         },
         {
           label: 'Cost',
-          backgroundColor: 'rgba(100, 46, 80, 0.2)',
-          borderColor: 'rgba(100, 46, 80, 1)',
+          backgroundColor: 'rgba(34, 46, 80, 0.2)',
+          borderColor: 'rgba(34, 46, 80, 1)',
           borderWidth: 1,
-          hoverBackgroundColor: 'rgba(100, 46, 80, 0.4)',
-          hoverBorderColor: 'rgba(100, 46, 80, 1)',
+          hoverBackgroundColor: 'rgba(34, 46, 80, 0.4)',
+          hoverBorderColor: 'rgba(34, 46, 80, 1)',
           data: []
         },
         {
