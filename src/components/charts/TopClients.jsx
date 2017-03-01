@@ -23,20 +23,20 @@ export default class extends Component {
           {
             data: data.map(obj => obj.TotalSales),
             backgroundColor: [
-              '#FF6384',
-              '#36A2EB',
-              '#62ffb8',
-              '#69ff56',
-              '#a756ff',
+              '#222E50',
+              '#BCD8C1',
+              '#439A86',
+              '#007991',
+              '#4B66AF',
               '#fcb455',
               '#a1fcf9'
             ],
             hoverBackgroundColor: [
-              '#FF6384',
-              '#36A2EB',
-              '#62ffb8',
-              '#69ff56',
-              '#a756ff',
+              '#222E50',
+              '#BCD8C1',
+              '#439A86',
+              '#007991',
+              '#4B66AF',
               '#fcb455',
               '#a1fcf9'
             ]

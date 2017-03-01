@@ -16,7 +16,7 @@ export default (props) => {
     <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
       <div>
         <AppBar
-          style={{backgroundColor: '#40798C'}}
+          style={{backgroundColor: '#007991'}}
           title={<span style={styles.title}>Dashboard</span>}
           onTitleTouchTap={()=>props.router.push('/')}
         />

@@ -47,7 +47,7 @@ export default class extends Component {
             goal.CurrentAmount, goal.AmountMissing
           ],
           backgroundColor: [
-            '#BDC39D', '#FCCC8E'
+            '#007991', '#439A86'
           ],
           hoverBackgroundColor: ['#BDC39D', '#FCCC8E']
         }

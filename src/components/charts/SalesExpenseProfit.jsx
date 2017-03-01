@@ -12,29 +12,29 @@ export default class extends Component {
       datasets: [
         {
           label: 'Sales',
-          backgroundColor: 'rgba(39, 128, 164, 0.2)',
+          backgroundColor: 'rgba(0, 121, 145, 0.2)',
           borderColor: 'rgba(39, 128, 164, 1)',
           borderWidth: 1,
-          hoverBackgroundColor: 'rgba(39, 128, 164, 0.4)',
-          hoverBorderColor: 'rgba(39, 128, 164, 1)',
+          hoverBackgroundColor: 'rgba(0, 121, 145, 0.4)',
+          hoverBorderColor: 'rgba(0, 121, 145, 1)',
           data: []
         },
         {
           label: 'Cost',
-          backgroundColor: 'rgba(227, 11, 93, 0.2)',
-          borderColor: 'rgba(227, 11, 93, 1)',
+          backgroundColor: 'rgba(67, 154, 134, 0.2)',
+          borderColor: 'rgba(67, 154, 134, 1)',
           borderWidth: 1,
-          hoverBackgroundColor: 'rgba(227, 11, 93, 0.4)',
-          hoverBorderColor: 'rgba(227, 11, 93, 1)',
+          hoverBackgroundColor: 'rgba(67, 154, 134, 0.4)',
+          hoverBorderColor: 'rgba(67, 154, 134, 1)',
           data: []
         },
         {
           label: 'Profits',
-          backgroundColor: 'rgba(149, 173, 51, 0.2)',
-          borderColor: 'rgba(149, 173, 51, 1)',
+          backgroundColor: 'rgba(34, 46, 80, 0.2)',
+          borderColor: 'rgba(34, 46, 80, 1)',
           borderWidth: 1,
-          hoverBackgroundColor: 'rgba(149, 173, 51, 0.4)',
-          hoverBorderColor: 'rgba(149, 173, 51, 1)',
+          hoverBackgroundColor: 'rgba(34, 46, 80, 0.4)',
+          hoverBorderColor: 'rgba(34, 46, 80, 1)',
           data: []
         }
       ]
@@ -74,9 +74,9 @@ export default class extends Component {
     return (
       <Paper>
         <div className="chart-title">
-          <span style={{color: "rgba(39, 128, 164, 1)"}}> Sales </span>
-          <span style={{color: 'rgba(227, 11, 93, 1)'}}> Costs </span>
-          <span style={{color: 'rgba(149, 173, 51, 1)'}}> Profits </span>
+          <span style={{color: "rgba(0, 0, 0, 1)"}}> Sales </span>
+          <span style={{color: 'rgba(0, 0, 0, 1)'}}> Costs </span>
+          <span style={{color: 'rgba(0, 0, 0, 1)'}}> Profits </span>
         </div>
         <Bar
           data={this.state.data}
