@@ -10,6 +10,7 @@ import Sales from './charts/Sales';
 import Expenses from './charts/Expenses';
 import SalesTable from "./charts/SalesTable";
 import GoalChart from "./charts/GoalChart";
+import LineChart from "./charts/LineChart";
 import Loading from './charts/Loading'
 import * as api from '../api'
 import GoalsAchieved from "./charts/GoalsAchieved";
@@ -44,7 +45,7 @@ export default class extends React.Component {
         </div>
         <div className="tile-lg SalesExpenseProfit"><SalesExpenseProfit/></div>
         <div className="tile-sm"><TopClients/></div>
-        <div className="tile-sm"><TopClients/></div>
+        <div className="tile-sm"><LineChart/></div>
         <div className="tile-sm"><SalesTable/></div>
 
         {!this.state.goalsData ? <Loading/> :
