@@ -21,7 +21,10 @@ export default class extends Component {
         labels: data.map(obj => obj.Month),
         datasets: [
           {
-            data: data.map(obj => obj.Sales)
+            data: data.map(obj => obj.Sales),
+            backgroundColor: [
+              'rgba(0, 121, 180, 0.2)',
+            ]
           }
         ]
       }
