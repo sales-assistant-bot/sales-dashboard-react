@@ -21,20 +21,20 @@ export default class extends Component {
         },
         {
           label: 'Cost',
-          backgroundColor: 'rgba(67, 154, 134, 0.2)',
-          borderColor: 'rgba(67, 154, 134, 1)',
-          borderWidth: 1,
-          hoverBackgroundColor: 'rgba(67, 154, 134, 0.4)',
-          hoverBorderColor: 'rgba(67, 154, 134, 1)',
-          data: []
-        },
-        {
-          label: 'Profits',
           backgroundColor: 'rgba(34, 46, 80, 0.2)',
           borderColor: 'rgba(34, 46, 80, 1)',
           borderWidth: 1,
           hoverBackgroundColor: 'rgba(34, 46, 80, 0.4)',
           hoverBorderColor: 'rgba(34, 46, 80, 1)',
+          data: []
+        },
+        {
+          label: 'Profits',
+          backgroundColor: 'rgba(67, 154, 134, 0.2)',
+          borderColor: 'rgba(67, 154, 134, 1)',
+          borderWidth: 1,
+          hoverBackgroundColor: 'rgba(67, 154, 134, 0.4)',
+          hoverBorderColor: 'rgba(67, 154, 134, 1)',
           data: []
         }
       ]
@@ -74,9 +74,9 @@ export default class extends Component {
     return (
       <Paper>
         <div className="chart-title">
-          <span style={{color: "rgba(0, 0, 0, 1)"}}> Sales </span>
-          <span style={{color: 'rgba(0, 0, 0, 1)'}}> Costs </span>
-          <span style={{color: 'rgba(0, 0, 0, 1)'}}> Profits </span>
+          <span style={{color: "rgba(39, 128, 164, 0.6)"}}> Sales </span>
+          <span style={{color: 'rgba(34, 46, 80, 0.6)'}}> Costs </span>
+          <span style={{color: 'rgba(67, 154, 134, 0.6)'}}> Profits </span>
         </div>
         <Bar
           data={this.state.data}

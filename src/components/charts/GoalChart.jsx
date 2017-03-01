@@ -21,32 +21,34 @@ export default class extends Component {
     }
     return (
       <Paper className="goal">
-        <div className="chart-title">
-          <div className="goal-amount">
-            {` Goal: $${data.GoalAmount.toMoney()}`}
-          </div>
-          <div className="goal-date-range">
+        <div className="goal-amount chart-title">
+          {` Goal: $${data.GoalAmount.toMoney()}`}
+        </div>
+        <div className="goal-time">
+          <span >
             {
               moment(data.StartDate).format('MMM D') +
                   " - " +
               moment(data.EndDate).format('MMM D') + " "
             }
-          </div>
+          </span>
+          <span>
+            {moment(data.EndDate).fromNow(true)}
+            {" remaining."}
+          </span>
         </div>
         {overValue
           ? <span>{`Congratulations, $${data.GoalAmount} reached!`}</span>
           : <span>{`You've managed $${Math.round(data.CurrentAmount).toMoney()} so far.`}</span>
         }
-
-        <Progress animated bar color={overValue? "success" : "warning"} value={mainValue}>
-        </Progress>
-        {overValue? <Progress animated bar color="info" value={overValue}/> : null}
+        <div className="progress-bars">
+          <Progress animated bar color={overValue? "success" : "warning"} value={mainValue}>
+          </Progress>
+          {overValue? <Progress animated bar color="info" value={overValue}/> : null}
+        </div>
         {overValue? <span>{`You've gone $${Math.round(Number(data.CurrentAmount-data.GoalAmount)).toMoney()} past your goal!` }</span> : null}
 
-        <div className="goal-time-remaining">
-          {moment(data.EndDate).fromNow(true)}
-          {" remaining."}
-        </div>
+
       </Paper>
     )
   }
