@@ -35,9 +35,9 @@ TODO: Write history
 
 ## Authors
 
-Anthony Desormeau
-Randy klose
-Joe Melanson
+* [Anthony Desormeau](https://github.com/ajdez)
+* [Randy Klose](https://github.com/Randyklose)
+* [Joseph Melanson](https://github.com/joemelanson)
 
 ## License
 
