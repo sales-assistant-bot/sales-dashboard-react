@@ -6,19 +6,15 @@
     "react-scripts": "0.9.0"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.6",
     "chart.js": "^2.5.0",
     "material-ui": "^0.17.0",
     "moment": "^2.17.1",
     "react": "^15.4.2",
-    "react-addons-css-transition-group": "^15.4.2",
-    "react-addons-transition-group": "^15.4.2",
     "react-chartjs-2": "^2.0.5",
     "react-dom": "^15.4.2",
     "react-google-charts": "^1.4.2",
     "react-router": "^3.0.2",
-    "react-tap-event-plugin": "^2.0.1",
-    "reactstrap": "^4.2.0"
+    "react-tap-event-plugin": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
