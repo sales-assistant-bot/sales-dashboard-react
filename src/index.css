@@ -121,6 +121,10 @@ tbody tr, tbody tr td {
     height: 34px !important;
 }
 
+.goal-date-range {
+  color: #9EC1A3;
+}
+
 @media (max-width: 764px) {
     .body {
         width: 100vw
