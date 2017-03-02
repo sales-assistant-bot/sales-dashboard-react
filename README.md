@@ -25,11 +25,15 @@ $npm start
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
+## Examples
+![dashboard full view]
+
+
 ## History
 
 TODO: Write history
 
-## Credits
+## Authors
 
 Anthony Desormeau
 Randy klose
