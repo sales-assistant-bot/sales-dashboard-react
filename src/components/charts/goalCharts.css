@@ -40,15 +40,18 @@
 
 .goal .bg-success {
   text-align: center;
-  background-color: rgba(67, 154, 134, 0.5) !important;
-}
-
-.goal .bg-info {
-  background-color: rgba(0, 121, 180, 0.5) !important;
+  border: 1px solid rgba(67, 154, 134, 1);
+  background-color: rgba(67, 154, 134, 0.2) !important;
 }
 
 .goal .bg-warning {
-  background-color: rgba(100, 46, 80, 0.5) !important;
+  border: 1px solid rgba(0, 121, 180, 1);
+  background-color: rgba(0, 121, 180, 0.2) !important;
+}
+
+.goal .bg-info {
+  border: 1px solid rgba(0, 121, 180, 1);
+  background-color: rgba(0, 121, 180, 0.2) !important;
 }
 
 .goal .progress-bar {

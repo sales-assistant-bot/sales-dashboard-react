@@ -37,14 +37,15 @@ export default class extends Component {
         </div>
 
         <div className="progress-bars">
-          <Progress animated bar color={overValue? "success" : "warning"} value={mainValue}>
+          <Progress  bar color={overValue? "success" : "warning"} value={mainValue}>
             {overValue ? <span className="goal-text-congrats">{`Congratulations, goal reached!`}</span> : null}
           </Progress>
-          {overValue? <Progress animated bar color="info" value={overValue}/> : null}
+          {overValue? <Progress bar color="info" value={overValue}/> : null}
         </div>
-        {overValue? <span className="goal-text">{`You've gone $${Math.round(Number(data.CurrentAmount-data.GoalAmount)).toMoney()} past your goal!` }</span> : null}
-
-        {!overValue? <span className="goal-text">{`You've managed $${Math.round(data.CurrentAmount).toMoney()} so far.`}</span> : null}
+        {overValue
+          ? <span className="goal-text">{`You've gone $${Math.round(Number(data.CurrentAmount-data.GoalAmount)).toMoney()} past your goal!` }</span>
+          : <span className="goal-text">{`You've managed $${Math.round(data.CurrentAmount).toMoney()} so far.`}</span>
+        }
 
       </Paper>
     )
@@ -53,12 +54,12 @@ export default class extends Component {
 
 
 Number.prototype.toMoney = function(decimals, decimal_sep, thousands_sep) {
-   var n = this,
-   c = isNaN(decimals) ? 2 : Math.abs(decimals),
-   d = decimal_sep || '.',
-   t = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
-   sign = (n < 0) ? '-' : '',
-   i = parseInt(n = Math.abs(n).toFixed(c)) + '',
-   j = ((j = i.length) > 3) ? j % 3 : 0;
-   return sign + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : '');
+  var n = this,
+  c = isNaN(decimals) ? 2 : Math.abs(decimals),
+  d = decimal_sep || '.',
+  t = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+  sign = (n < 0) ? '-' : '',
+  i = parseInt(n = Math.abs(n).toFixed(c)) + '',
+  j = ((j = i.length) > 3) ? j % 3 : 0;
+  return sign + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : '');
 }
