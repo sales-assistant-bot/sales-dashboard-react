@@ -133,12 +133,9 @@ tbody tr, tbody tr td {
     .main-component {
         width: 100%
     }
-    .tile-xs {
-        width: 50%;
-        padding-bottom: 3%;
-    }
+
     .tile-xs>div {
-        padding-bottom: 5%;
+        padding-bottom: 3%;
     }
     .tile-sm {
         width: 100vw;
@@ -146,14 +143,12 @@ tbody tr, tbody tr td {
 
     }
     .tile-sm>div {
-        padding-bottom: 5%;
+        padding-bottom: 3%;
     }
     .tile-lg {
-        max-height: 550px;
+        max-height: 390px;
         width: 100%;
         padding-bottom: 3%;
     }
-    .tile-lg>div {
-        padding-bottom: 5%;
-    }
+
 }
