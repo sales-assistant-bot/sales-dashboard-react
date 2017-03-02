@@ -22,7 +22,10 @@ export default class extends Component {
         datasets: [
           {
             data: data.map(obj => obj.Sales),
-            label: 'Dollar Value ($)'
+            label: 'Dollar Value ($)',
+            backgroundColor: [
+              'rgba(0, 121, 180,  0.2)'
+            ]
           }
         ]
       }
