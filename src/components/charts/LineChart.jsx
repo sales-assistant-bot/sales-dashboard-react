@@ -24,7 +24,7 @@ export default class extends Component {
             data: data.map(obj => obj.Sales),
             label: 'Dollar Value ($)',
             backgroundColor: [
-              'rgba(0, 121, 180, 0.2)',
+            'rgba(0, 121, 180, 0.2)',
             ]
 
           }
