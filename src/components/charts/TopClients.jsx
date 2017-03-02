@@ -23,9 +23,9 @@ export default class extends Component {
           {
             data: data.map(obj => obj.TotalSales),
             backgroundColor: [
-              '#222E50',
-              '#BCD8C1',
-              '#439A86',
+              'rgba(0, 121, 180, 0.2)',
+              'rgba(34, 46, 80, 0.2)',
+              'rgba(67, 154, 134, 0.2)',
               '#007991',
               '#4B66AF',
               '#fcb455',

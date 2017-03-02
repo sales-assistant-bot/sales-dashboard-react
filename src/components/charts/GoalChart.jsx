@@ -16,6 +16,13 @@ export default class extends Component {
       },
       maintainAspectRatio: true,
       responsive: true
+
+  //     const { data } = this.props;
+  //  let mainValue = data.CurrentAmount/data.GoalAmount * 100;
+  //  let overValue;
+  //  if (mainValue > 100) {
+  //    overValue = mainValue-100;
+  //    mainValue = 100;
     }
     return (
       <Paper>
@@ -47,9 +54,9 @@ export default class extends Component {
             goal.CurrentAmount, goal.AmountMissing
           ],
           backgroundColor: [
-            '#BDC39D', '#FCCC8E'
+            'rgba(0, 121, 180, 0.2)', 'rgba(34, 46, 80, 0.2)'
           ],
-          hoverBackgroundColor: ['#BDC39D', '#FCCC8E']
+          hoverBackgroundColor: ['#rgba(0, 121, 180, 0.2)', 'rgba(34, 46, 80, 0.2)']
         }
       ]
     }
