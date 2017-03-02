@@ -26,7 +26,7 @@ $npm start
 5. Submit a pull request :D
 
 ## Examples
-![dashboard full view](screenshots/dashboard.png)
+![dashboard full view](screenshots/Dashborad.png)
 
 
 ## History
