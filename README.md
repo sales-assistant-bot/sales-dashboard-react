@@ -2,7 +2,9 @@
 
 Sales-Dashboard-react is a complete application which works like a dashboard for tracking key sales metrics and performance indicators. With a simple interface, this dashboard can help you track and display your sales activity online.
 
-
+## Demo
+* Click link below to see demo presentation of the Sales Bot Project
+* [Sales Bot Demo](https://www.youtube.com/watch?v=KC0GPHN8mYs)
 
 ## Installation
 
